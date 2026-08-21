@@ -1,0 +1,321 @@
+year,crop,production_tonnes
+1961,"Citrus Fruit, Total",515700.0
+1962,"Citrus Fruit, Total",559600.0
+1963,"Citrus Fruit, Total",736400.0
+1964,"Citrus Fruit, Total",838950.0
+1965,"Citrus Fruit, Total",878200.0
+1966,"Citrus Fruit, Total",906450.0
+1967,"Citrus Fruit, Total",1082000.0
+1968,"Citrus Fruit, Total",1265340.0
+1969,"Citrus Fruit, Total",1178100.0
+1970,"Citrus Fruit, Total",1261925.0
+1971,"Citrus Fruit, Total",1513500.0
+1972,"Citrus Fruit, Total",1552800.0
+1973,"Citrus Fruit, Total",1692700.0
+1974,"Citrus Fruit, Total",1702100.0
+1975,"Citrus Fruit, Total",1510100.0
+1976,"Citrus Fruit, Total",1537700.0
+1977,"Citrus Fruit, Total",1537200.0
+1978,"Citrus Fruit, Total",1490600.0
+1979,"Citrus Fruit, Total",1579800.0
+1980,"Citrus Fruit, Total",1553850.0
+1981,"Citrus Fruit, Total",1420400.0
+1982,"Citrus Fruit, Total",1800350.0
+1983,"Citrus Fruit, Total",1525900.0
+1984,"Citrus Fruit, Total",1520900.0
+1985,"Citrus Fruit, Total",1483150.0
+1986,"Citrus Fruit, Total",1308600.0
+1987,"Citrus Fruit, Total",1514400.0
+1988,"Citrus Fruit, Total",1108350.0
+1989,"Citrus Fruit, Total",1086250.0
+1990,"Citrus Fruit, Total",1500650.0
+1991,"Citrus Fruit, Total",1094900.0
+1992,"Citrus Fruit, Total",1003550.0
+1993,"Citrus Fruit, Total",941450.0
+1994,"Citrus Fruit, Total",833410.0
+1995,"Citrus Fruit, Total",906430.0
+1996,"Citrus Fruit, Total",873850.0
+1997,"Citrus Fruit, Total",960990.0
+1998,"Citrus Fruit, Total",898775.0
+1999,"Citrus Fruit, Total",777100.0
+2000,"Citrus Fruit, Total",661700.0
+2001,"Citrus Fruit, Total",680000.0
+2002,"Citrus Fruit, Total",595630.0
+2003,"Citrus Fruit, Total",538630.0
+2004,"Citrus Fruit, Total",510490.0
+2005,"Citrus Fruit, Total",666030.0
+2006,"Citrus Fruit, Total",585968.0
+2007,"Citrus Fruit, Total",647974.0
+2008,"Citrus Fruit, Total",537262.0
+2009,"Citrus Fruit, Total",592118.0
+2010,"Citrus Fruit, Total",563532.49
+2011,"Citrus Fruit, Total",476701.0
+2012,"Citrus Fruit, Total",612048.0
+2013,"Citrus Fruit, Total",533131.0
+2014,"Citrus Fruit, Total",530643.0
+2015,"Citrus Fruit, Total",533665.0
+2016,"Citrus Fruit, Total",494000.0
+2017,"Citrus Fruit, Total",494289.0
+2018,"Citrus Fruit, Total",483702.0
+2019,"Citrus Fruit, Total",519649.0
+2020,"Citrus Fruit, Total",494885.0
+2021,"Citrus Fruit, Total",421979.0
+2022,"Citrus Fruit, Total",540384.0
+2023,"Citrus Fruit, Total",557255.0
+2024,"Citrus Fruit, Total",455061.0
+1961,Figs,2300.0
+1962,Figs,2200.0
+1963,Figs,1900.0
+1964,Figs,1800.0
+1965,Figs,1600.0
+1966,Figs,1400.0
+1967,Figs,1450.0
+1968,Figs,1400.0
+1969,Figs,1400.0
+1970,Figs,1350.0
+1971,Figs,1300.0
+1972,Figs,1050.0
+1973,Figs,1000.0
+1974,Figs,950.0
+1975,Figs,850.0
+1976,Figs,800.0
+1977,Figs,750.0
+1978,Figs,600.0
+1979,Figs,500.0
+1980,Figs,360.0
+1981,Figs,400.0
+1982,Figs,400.0
+1983,Figs,450.0
+1984,Figs,300.0
+1985,Figs,250.0
+1986,Figs,200.0
+1987,Figs,200.0
+1988,Figs,250.0
+1989,Figs,350.0
+1990,Figs,400.0
+1991,Figs,400.0
+1992,Figs,670.0
+1993,Figs,510.0
+1994,Figs,550.0
+1995,Figs,560.0
+1996,Figs,530.0
+1997,Figs,470.0
+1998,Figs,500.0
+1999,Figs,500.0
+2000,Figs,575.0
+2001,Figs,542.0
+2002,Figs,730.0
+2003,Figs,920.0
+2004,Figs,1040.0
+2005,Figs,1401.0
+2006,Figs,1380.0
+2007,Figs,1794.0
+2008,Figs,2172.0
+2009,Figs,4441.0
+2010,Figs,4307.0
+2011,Figs,5165.0
+2012,Figs,1450.0
+2013,Figs,2180.0
+2014,Figs,2338.0
+2015,Figs,2350.0
+2016,Figs,2320.0
+2017,Figs,2390.0
+2018,Figs,2414.0
+2019,Figs,2387.0
+2020,Figs,2381.0
+2021,Figs,2356.0
+2022,Figs,2377.0
+2023,Figs,2380.0
+2024,Figs,2136.0
+1961,Grapes,63300.0
+1962,Grapes,72500.0
+1963,Grapes,59200.0
+1964,Grapes,83300.0
+1965,Grapes,80300.0
+1966,Grapes,76000.0
+1967,Grapes,82000.0
+1968,Grapes,71900.0
+1969,Grapes,80400.0
+1970,Grapes,60700.0
+1971,Grapes,66600.0
+1972,Grapes,81400.0
+1973,Grapes,77900.0
+1974,Grapes,74600.0
+1975,Grapes,75500.0
+1976,Grapes,77500.0
+1977,Grapes,70000.0
+1978,Grapes,76300.0
+1979,Grapes,72200.0
+1980,Grapes,76400.0
+1981,Grapes,83700.0
+1982,Grapes,86400.0
+1983,Grapes,93700.0
+1984,Grapes,91800.0
+1985,Grapes,80500.0
+1986,Grapes,82300.0
+1987,Grapes,89700.0
+1988,Grapes,89030.0
+1989,Grapes,95600.0
+1990,Grapes,95000.0
+1991,Grapes,70800.0
+1992,Grapes,87650.0
+1993,Grapes,79090.0
+1994,Grapes,80280.0
+1995,Grapes,88670.0
+1996,Grapes,89650.0
+1997,Grapes,89400.0
+1998,Grapes,88600.0
+1999,Grapes,84950.0
+2000,Grapes,101837.0
+2001,Grapes,121700.0
+2002,Grapes,125500.0
+2003,Grapes,126590.0
+2004,Grapes,139850.0
+2005,Grapes,125650.0
+2006,Grapes,125439.0
+2007,Grapes,112851.0
+2008,Grapes,96937.0
+2009,Grapes,91181.0
+2010,Grapes,95075.36
+2011,Grapes,89476.0
+2012,Grapes,74700.0
+2013,Grapes,70000.0
+2014,Grapes,66700.0
+2015,Grapes,66000.0
+2016,Grapes,66002.0
+2017,Grapes,68503.0
+2018,Grapes,63000.0
+2019,Grapes,57100.0
+2020,Grapes,46174.0
+2021,Grapes,60520.0
+2022,Grapes,65030.0
+2023,Grapes,62583.0
+2024,Grapes,56007.0
+1961,Olives,20800.0
+1962,Olives,4800.0
+1963,Olives,13000.0
+1964,Olives,21000.0
+1965,Olives,10500.0
+1966,Olives,10900.0
+1967,Olives,24500.0
+1968,Olives,9500.0
+1969,Olives,21100.0
+1970,Olives,6600.0
+1971,Olives,12500.0
+1972,Olives,27000.0
+1973,Olives,4000.0
+1974,Olives,30200.0
+1975,Olives,4900.0
+1976,Olives,19500.0
+1977,Olives,8100.0
+1978,Olives,35000.0
+1979,Olives,8200.0
+1980,Olives,45000.0
+1981,Olives,19700.0
+1982,Olives,37200.0
+1983,Olives,37200.0
+1984,Olives,17300.0
+1985,Olives,39000.0
+1986,Olives,38000.0
+1987,Olives,25000.0
+1988,Olives,39000.0
+1989,Olives,19500.0
+1990,Olives,41500.0
+1991,Olives,17000.0
+1992,Olives,48000.0
+1993,Olives,9500.0
+1994,Olives,26500.0
+1995,Olives,36500.0
+1996,Olives,41000.0
+1997,Olives,18700.0
+1998,Olives,32000.0
+1999,Olives,23200.0
+2000,Olives,56000.0
+2001,Olives,26000.0
+2002,Olives,56000.0
+2003,Olives,21500.0
+2004,Olives,62000.0
+2005,Olives,29000.0
+2006,Olives,60000.0
+2007,Olives,29500.0
+2008,Olives,48750.0
+2009,Olives,30500.0
+2010,Olives,73500.0
+2011,Olives,66000.0
+2012,Olives,63000.0
+2013,Olives,77000.0
+2014,Olives,90000.0
+2015,Olives,98000.0
+2016,Olives,91000.0
+2017,Olives,87000.0
+2018,Olives,54500.0
+2019,Olives,108000.0
+2020,Olives,83000.0
+2021,Olives,70000.0
+2022,Olives,138000.0
+2023,Olives,46000.0
+2024,Olives,29000.0
+1961,Wheat,65900.0
+1962,Wheat,51700.0
+1963,Wheat,54700.0
+1964,Wheat,126500.0
+1965,Wheat,150000.0
+1966,Wheat,100600.0
+1967,Wheat,221600.0
+1968,Wheat,175000.0
+1969,Wheat,155800.0
+1970,Wheat,125000.0
+1971,Wheat,199500.0
+1972,Wheat,301400.0
+1973,Wheat,241500.0
+1974,Wheat,274000.0
+1975,Wheat,243300.0
+1976,Wheat,205500.0
+1977,Wheat,220000.0
+1978,Wheat,167000.0
+1979,Wheat,133200.0
+1980,Wheat,253200.0
+1981,Wheat,215000.0
+1982,Wheat,147000.0
+1983,Wheat,335000.0
+1984,Wheat,130000.0
+1985,Wheat,127700.0
+1986,Wheat,168500.0
+1987,Wheat,298000.0
+1988,Wheat,211000.0
+1989,Wheat,201700.0
+1990,Wheat,291200.0
+1991,Wheat,180000.0
+1992,Wheat,254100.0
+1993,Wheat,217000.0
+1994,Wheat,103230.0
+1995,Wheat,242000.0
+1996,Wheat,185000.0
+1997,Wheat,116000.0
+1998,Wheat,155000.0
+1999,Wheat,29000.0
+2000,Wheat,94000.0
+2001,Wheat,157970.0
+2002,Wheat,177275.0
+2003,Wheat,184300.0
+2004,Wheat,154300.0
+2005,Wheat,200800.0
+2006,Wheat,131200.0
+2007,Wheat,158921.0
+2008,Wheat,75734.0
+2009,Wheat,132963.0
+2010,Wheat,112324.32
+2011,Wheat,141866.0
+2012,Wheat,222487.0
+2013,Wheat,178200.0
+2014,Wheat,139800.0
+2015,Wheat,173000.0
+2016,Wheat,168000.0
+2017,Wheat,72200.0
+2018,Wheat,70500.0
+2019,Wheat,84750.0
+2020,Wheat,116691.0
+2021,Wheat,150000.0
+2022,Wheat,141600.0
+2023,Wheat,150000.0
+2024,Wheat,90350.0

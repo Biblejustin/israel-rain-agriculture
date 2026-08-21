@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/raw_probe/
+*.zip
+*.csv.bak
+.DS_Store
