@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-09-05T00:37:49.065273+00:00",
+  "model": {
+    "columns": [
+      "intercept",
+      "year minus 1990",
+      "total_mm"
+    ],
+    "coefficients": [
+      376.2336002893627,
+      13.89564889946726,
+      6.105161307005043
+    ],
+    "year_only_coefficients": [
+      2075.656128392218,
+      10.560824692780338
+    ]
+  },
+  "input_sha256": {
+    "analysis_plan.json": "0f9f4ae83239dff5b8ce243be2bc402f70d4d04aac54b28025c5f717de1b3beb",
+    "data/rain_cckp_monthly.csv": "67ca56ed016f4d681012a0410d185d8c5661425243f18a011bc710fc09be585b",
+    "data/faostat_crop_measures.csv": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
+    "data/wb_cereal_yield.csv": "1d348fc2e87feca8dc7cb327d1791491c21e995049b5a0e06c930cad88f726a2"
+  },
+  "holdout_start": 2025
+}

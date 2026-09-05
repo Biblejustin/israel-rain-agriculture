@@ -1,0 +1,15 @@
+          outcome     rain  start  end  n                 status        r  p_partial_time    p_hac  p_block3  rain_coefficient  hac_ci_low  hac_ci_high  q_hac_family30
+production_tonnes total_mm   1991 2023 33 exploratory historical 0.616805        0.000170 0.000071  0.000450        474.500509  264.004120   684.996899        0.000267
+area_harvested_ha total_mm   1991 2023 33 exploratory historical 0.060459        0.742381 0.628777  0.730763         12.804092  -40.730607    66.338791        0.650459
+      yield_kg_ha total_mm   1991 2023 33 exploratory historical 0.557920        0.000907 0.000002  0.001650          6.583638    4.303647     8.863628        0.000014
+          outcome  n     rain  start  end                                                  status    p_hac  coefficient_difference  hac_ci_low  hac_ci_high  q_hac_family30
+production_tonnes 63 total_mm   1961 2023 exploratory era interaction, not irrigation attribution 0.564384              -97.216557 -433.018448   238.585334        0.627094
+area_harvested_ha 63 total_mm   1961 2023 exploratory era interaction, not irrigation attribution 0.174357              -54.501648 -133.845332    24.842036        0.249081
+      yield_kg_ha 63 total_mm   1961 2023 exploratory era interaction, not irrigation attribution 0.408229                1.363560   -1.913676     4.640797        0.489875
+rain_measure coefficient  n  estimate  p_calendar_hac  q_calendar_hac_family6
+    total_mm        rain 17  6.229749        0.066517                0.099775
+    total_mm  irrigation 17 74.816786        0.028169                0.056338
+   former_mm        rain 17  7.764521        0.474381                0.569257
+   former_mm  irrigation 17 60.188975        0.002624                0.015745
+   latter_mm        rain 17  3.641700        0.737064                0.737064
+   latter_mm  irrigation 17 62.953640        0.019449                0.056338

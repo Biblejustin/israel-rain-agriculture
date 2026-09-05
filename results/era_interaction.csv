@@ -1,0 +1,4 @@
+outcome,n,rain,start,end,status,p_hac,coefficient_difference,hac_ci_low,hac_ci_high,q_hac_family30
+production_tonnes,63,total_mm,1961,2023,"exploratory era interaction, not irrigation attribution",0.564384487668864,-97.21655688703761,-433.01844823606933,238.58533446199414,0.6270938751876266
+area_harvested_ha,63,total_mm,1961,2023,"exploratory era interaction, not irrigation attribution",0.17435651048139172,-54.50164809177276,-133.84533175388816,24.842035570342638,0.24908072925913102
+yield_kg_ha,63,total_mm,1961,2023,"exploratory era interaction, not irrigation attribution",0.4082287549724458,1.3635601933786567,-1.9136763706116917,4.640796757369005,0.489874505966935

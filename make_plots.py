@@ -5,7 +5,7 @@ Conventions:
 - CCKP CRU TS 4.08 is a gridded country average: use it for trends and
   anomalies, not for absolute station comparisons.
 - FAOSTAT production is calendar-year tonnes; the index is 2014-2016=100.
-- Trend lines are OLS with a shaded 95% bootstrap band on the slope.
+- Trend lines are OLS with HAC(3) 95% slope bounds. Historical smoothers are descriptive.
 """
 from __future__ import annotations
 
@@ -96,8 +96,8 @@ def plot_03_production(idx: pd.Series, yield_: pd.Series):
 
 
 def plot_04_crops(crops: pd.DataFrame):
-    order = ["Wheat", "Grapes", "Olives", "Figs", "Citrus Fruit, Total"]
-    fig, axes = plt.subplots(len(order), 1, figsize=(11, 13), sharex=True)
+    order = [name for name in ["Wheat", "Barley", "Grapes", "Olives", "Figs", "Dates", "Pomegranates", "Citrus Fruit, Total"] if name in set(crops.crop)]
+    fig, axes = plt.subplots(len(order), 1, figsize=(11, 2.4*len(order)), sharex=True)
     for ax, crop in zip(axes, order):
         sub = crops[crops["crop"] == crop].set_index("year")["production_tonnes"].dropna()
         x, y = sub.index.values.astype(float), sub.values
@@ -108,6 +108,7 @@ def plot_04_crops(crops: pd.DataFrame):
                       fontsize=10.5)
         ax.set_ylabel("kt")
     axes[-1].set_xlabel("year")
+    fig.subplots_adjust(top=0.95, hspace=0.38)
     fig.suptitle("Production of the storied crops, 1961-2024 (FAOSTAT, thousands of tonnes)",
                   y=0.995)
     plt.savefig(FIGS / "04_crops.png")
@@ -117,8 +118,8 @@ def plot_04_crops(crops: pd.DataFrame):
 def plot_05_decoupling(rain: pd.DataFrame, yield_: pd.Series):
     from scipy import stats as st
     fig, axes = plt.subplots(1, 2, figsize=(11, 5), sharey=True)
-    eras = [(1961, 1990, "1961-1990: harvest follows the rain"),
-             (1991, 2023, "1991-2023: irrigation + desalination era")]
+    eras = [(1961, 1990, "1961-1990: historical comparison"),
+             (1991, 2023, "1991-2023: historical comparison")]
     for ax, (lo, hi, title) in zip(axes, eras):
         r_e = rain.loc[(rain.index >= lo) & (rain.index <= hi), "total_mm"]
         y_e = yield_.dropna()
@@ -131,10 +132,10 @@ def plot_05_decoupling(rain: pd.DataFrame, yield_: pd.Series):
         a, b = np.polyfit(rd, yd, 1)
         xs = np.array([rd.min(), rd.max()])
         ax.plot(xs, a * xs + b, color="#aa3322", lw=1.8)
-        ax.set_title(f"{title}\nr = {r:+.2f}  (p = {p:.3f})", fontsize=10.5)
+        ax.set_title(f"{title}\nr = {r:+.2f}  (iid Pearson p = {p:.3f}; descriptive)", fontsize=10.5)
         ax.set_xlabel("rain-year total, detrended (mm)")
     axes[0].set_ylabel("cereal yield, detrended (kg/ha)")
-    fig.suptitle("The decoupling: rain vs cereal yield, within-era detrended", y=1.00)
+    fig.suptitle("Rain vs cereal yield: descriptive within-era associations", y=1.00)
     plt.savefig(FIGS / "05_decoupling.png")
     plt.close()
 
