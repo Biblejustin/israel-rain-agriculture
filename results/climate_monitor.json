@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-05T21:35:34.997885+00:00",
+  "product": "CRU-CY4.10",
+  "latest_complete_rain_year": {
+    "year": 2025,
+    "rain_mm": 218.8,
+    "rain_percent_baseline": 53.589360503563654,
+    "rain_mm_z": -1.9018314712619555,
+    "former_mm": 29.7,
+    "latter_mm": 49.9,
+    "spring_tmx_c": 25.703260869565216,
+    "spring_tmx_c_anomaly": 1.2902536231884056,
+    "annual_tmp_c": 20.73041095890411,
+    "annual_tmp_c_anomaly": 0.9844875863961846,
+    "pet_mm": 1552.5,
+    "balance_mm": -1333.6999999999998,
+    "balance_mm_z": -2.0372219550663013,
+    "wet_days": 33.1
+  },
+  "latest_month": "2025-12",
+  "coverage": {
+    "4.08": {
+      "pre": {
+        "expected_months": 1476,
+        "present_months": 1476,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2023-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "mm/month"
+      },
+      "tmp": {
+        "expected_months": 1476,
+        "present_months": 1476,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2023-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "degrees Celsius"
+      },
+      "tmx": {
+        "expected_months": 1476,
+        "present_months": 1476,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2023-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "degrees Celsius"
+      },
+      "pet": {
+        "expected_months": 1476,
+        "present_months": 1476,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2023-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "mm/day"
+      },
+      "wet": {
+        "expected_months": 1476,
+        "present_months": 1476,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2023-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "days"
+      }
+    },
+    "4.10": {
+      "pre": {
+        "expected_months": 1500,
+        "present_months": 1500,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2025-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "mm/month"
+      },
+      "tmp": {
+        "expected_months": 1500,
+        "present_months": 1500,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2025-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "degrees Celsius"
+      },
+      "tmx": {
+        "expected_months": 1500,
+        "present_months": 1500,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2025-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "degrees Celsius"
+      },
+      "pet": {
+        "expected_months": 1500,
+        "present_months": 1500,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2025-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "mm/day"
+      },
+      "wet": {
+        "expected_months": 1500,
+        "present_months": 1500,
+        "missing_months": [],
+        "first_month": "1901-01",
+        "last_month": "2025-12",
+        "repeated_annual_vectors": 0,
+        "station_observation_coverage": null,
+        "unit": "days"
+      }
+    }
+  },
+  "baseline": "1991-2020; per metric, require 30 complete years",
+  "metric_units": {
+    "rain_mm": "mm per October-September rain year",
+    "former_mm": "mm per October-November",
+    "latter_mm": "mm per March-April",
+    "spring_tmx_c": "degrees Celsius, March-May day-weighted mean daily maximum",
+    "annual_tmp_c": "degrees Celsius, calendar-year day-weighted mean daily mean",
+    "pet_mm": "mm per October-September",
+    "balance_mm": "mm per October-September",
+    "wet_days": "days per October-September",
+    "rain_percent_baseline": "percent",
+    "*_anomaly": "same units as corresponding metric",
+    "*_z": "baseline sample standard deviations"
+  },
+  "geography": {
+    "source_country_label": "Israel",
+    "geography_id": "CRU-CY:Israel",
+    "spatial_resolution_degrees": 0.5,
+    "spatial_denominator": "Source area-weighted mean over CRU country grid-cell allocation; not cultivated area or population",
+    "weighting": "source-supplied area weights; no local equal-cell average or bounding-box substitution",
+    "mask_equivalent_to_cckp_isr": null,
+    "approved_frozen_product_equivalence": false,
+    "mask_equivalent_to_faostat_israel": null,
+    "mask_equivalence_status": "unverified; do not use as a direct CCKP continuation or crop-region exposure",
+    "mask_cell_count": null,
+    "mask_area_km2": null,
+    "mask_coverage_limitation": "Country files do not expose constituent cells, land fractions or denominator area; no invented numerical denominator",
+    "release_boundary_note": "4.10 country-definition notes change Italy/Malta only; older exact Israel mask still not independently reconstructed",
+    "area_weighting_source": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY.txt"
+  },
+  "source_status": "observation-derived monthly gridded estimates; not forecasts; may contain source climatology substitution",
+  "holdout": {
+    "status": "ineligible",
+    "holdout_start": 2025,
+    "minimum_future_pairs": 10,
+    "available_future_crop_years": [],
+    "available_cru_cy_future_rain_years": [
+      2025
+    ],
+    "candidate_cru_cy_pairs": [],
+    "candidate_pair_count": 0,
+    "approved_same_product_pair_count": 0,
+    "compatible_with_frozen_rain_aggregation": false,
+    "reasons": [
+      "CRU-CY is separately aggregated and not approved as frozen CCKP rainfall input",
+      "Fewer than 10 future pairs"
+    ],
+    "scoring_performed": false,
+    "frozen_model_refitted": false
+  },
+  "irrigation": {
+    "reported_years": [
+      2001,
+      2002,
+      2006,
+      2007,
+      2009,
+      2010,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "scope": "national all-crop agricultural irrigated land share; no wheat-specific irrigation series",
+    "source_status": "reported values may contain upstream estimates; no local interpolation"
+  },
+  "limitations": [
+    "CRU-CY station support/climatology-substitution fractions are unavailable; filled monthly records do not certify observed station coverage",
+    "Monthly average daily maximum temperature does not measure heatwave duration or days above a threshold",
+    "Rain minus PET is a climatic water-balance proxy, not soil moisture, crop water use, SPI or SPEI",
+    "No IMS station observations spliced into CRU; no wheat-specific irrigation supplied",
+    "Source country mask and agricultural reporting boundaries are not verified equivalent; no area-normalized crop attribution",
+    "2024 crop outcomes were already seen; 2025 onward remain reserved; no prospective scoring"
+  ],
+  "frozen_artifact_sha256": {
+    "analysis_plan.json": "0f9f4ae83239dff5b8ce243be2bc402f70d4d04aac54b28025c5f717de1b3beb",
+    "results/prospective_wheat_model.json": "b8db5a225db2f8ec76bb5e83395445b9d4ac94f3b41daac512f24ef459348318",
+    "data/rain_cckp_monthly.csv": "67ca56ed016f4d681012a0410d185d8c5661425243f18a011bc710fc09be585b",
+    "data/rain_cckp_annual.csv": "f4bcf7c7a96fb9b4e8f96f65dc53ca9ec44a7aa98095dd5ea41990f3fe8bf65b"
+  },
+  "extension_plan_sha256": "3958d579be4a605362c8038e129473ebef21f6ac760e54fb5447dee0125a3124",
+  "inputs_sha256": {
+    "data/faostat_crop_measures.csv": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
+    "data/water_covariates_reported.csv": "2fd299e0dadfd9a6449ee554766d7d9520be65171382df6fb07f6bcb2f0af9ba",
+    "data/climate/source_manifest.json": "5ed74c824fb68df881534fde32528cfe55eb19f8fb9ff00cc17a617684e5c42d"
+  }
+}

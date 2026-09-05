@@ -1,0 +1,35 @@
+RELEASE NOTES FOR CRU-CY v4.10: 18 June 2026
+
+NOTE: Please read the main documents as well:
+
+'Read_Me_CRU_CY.txt'
+
+The 4.10 release of the CRU-CY dataset covers the period 1901-2025.
+The best published reference to use is that of the underlying dataset,
+CRU TS:
+
+Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS
+monthly high-resolution gridded multivariate climate dataset.
+Sci Data 7, 109 (2020). https://doi.org/10.1038/s41597-020-0453-3
+
+This release uses the updated country definitions introduced in v4.10
+Please see the separate file,
+'Read_Me_CRU_CY_Updated_Country_Definitions.txt', for details.
+
+
+As always, please contact CEDA in the first instance if you have any
+questions, observations or suggestions. If, however, you wish to contact
+CRU directly about these datasets, please contact a.friedman@uea.ac.uk or
+t.osborn@uea.ac.uk.
+
+Ian 'Harry' Harris has now retired and updating of the CRU-TS family
+of datasets is now being undertaken by Andrew Friedman under the guidance
+of Tim Osborn.
+
+Andrew Friedman
+NCAS-Climate
+Climatic Research Unit
+School of Environmental Sciences
+University of East Anglia
+Norwich
+NR4 7TJ

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "version": "4.08",
+      "variable": "pre",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/countries/pre/crucy.v4.08.1901.2023.Israel.pre.per",
+      "fetched_at": "2026-09-05T21:35:29.824740+00:00",
+      "http_last_modified": "Wed, 03 Jul 2024 20:28:22 GMT",
+      "path": "data/climate/cru_cy_4.08/raw/Israel.pre.per",
+      "sha256": "356a484300b9da39f5a9f43fe0dbc17c036d131bbeb5e1dcff15e273a2eadb35",
+      "byte_size": 17887,
+      "header": [
+        "Climatic Research Unit Country File created on Wed  3 Jul 20:54:45 BST 2024, from CRU TS run #2406270035",
+        "Country = Israel               : parameter = Precipitation                  : Units = mm/month            ",
+        "Period = 1901.2023 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "mm/month"
+    },
+    {
+      "version": "4.08",
+      "variable": "tmp",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/countries/tmp/crucy.v4.08.1901.2023.Israel.tmp.per",
+      "fetched_at": "2026-09-05T21:35:29.831404+00:00",
+      "http_last_modified": "Wed, 03 Jul 2024 20:28:41 GMT",
+      "path": "data/climate/cru_cy_4.08/raw/Israel.tmp.per",
+      "sha256": "269c34b0123f0fcdbd1df2c5b73af19eaee98156d55ac3a8ae74c01a5aec159c",
+      "byte_size": 17887,
+      "header": [
+        "Climatic Research Unit Country File created on Wed  3 Jul 20:54:45 BST 2024, from CRU TS run #2406270035",
+        "Country = Israel               : parameter = Mean Temperature               : Units = degrees Celsius     ",
+        "Period = 1901.2023 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "degrees Celsius"
+    },
+    {
+      "version": "4.08",
+      "variable": "tmx",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/countries/tmx/crucy.v4.08.1901.2023.Israel.tmx.per",
+      "fetched_at": "2026-09-05T21:35:29.829410+00:00",
+      "http_last_modified": "Wed, 03 Jul 2024 20:28:50 GMT",
+      "path": "data/climate/cru_cy_4.08/raw/Israel.tmx.per",
+      "sha256": "b9d3ba710778c13b3a5ae5363847c9308d395f4ed01f2173501b48f45141cd26",
+      "byte_size": 17887,
+      "header": [
+        "Climatic Research Unit Country File created on Wed  3 Jul 20:54:45 BST 2024, from CRU TS run #2406270856",
+        "Country = Israel               : parameter = Maximum Temperature            : Units = degrees Celsius     ",
+        "Period = 1901.2023 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "degrees Celsius"
+    },
+    {
+      "version": "4.08",
+      "variable": "pet",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/countries/pet/crucy.v4.08.1901.2023.Israel.pet.per",
+      "fetched_at": "2026-09-05T21:35:29.831315+00:00",
+      "http_last_modified": "Wed, 03 Jul 2024 20:28:13 GMT",
+      "path": "data/climate/cru_cy_4.08/raw/Israel.pet.per",
+      "sha256": "8c4ca188080cbcb8334991cabb6cb6b5cb6e41fa9a3d21e26e9508918d499199",
+      "byte_size": 17887,
+      "header": [
+        "Climatic Research Unit Country File created on Wed  3 Jul 20:54:45 BST 2024, from CRU TS run #2406270856",
+        "Country = Israel               : parameter = Potential Evapotranspiration   : Units = mm/day              ",
+        "Period = 1901.2023 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "mm/day"
+    },
+    {
+      "version": "4.08",
+      "variable": "wet",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/countries/wet/crucy.v4.08.1901.2023.Israel.wet.per",
+      "fetched_at": "2026-09-05T21:35:30.539833+00:00",
+      "http_last_modified": "Wed, 03 Jul 2024 20:29:08 GMT",
+      "path": "data/climate/cru_cy_4.08/raw/Israel.wet.per",
+      "sha256": "ffb3cf5a3370d5ebe9c8464b0f7c2c800a23f3277d63fe52c75a9f862e99249b",
+      "byte_size": 17887,
+      "header": [
+        "Climatic Research Unit Country File created on Wed  3 Jul 20:54:45 BST 2024, from CRU TS run #2406270035",
+        "Country = Israel               : parameter = Rain Days                      : Units = days                ",
+        "Period = 1901.2023 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "days"
+    },
+    {
+      "version": "4.10",
+      "variable": "pre",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/countries/pre/crucy.v4.10.1901.2025.Israel.pre.per",
+      "fetched_at": "2026-09-05T21:35:30.528168+00:00",
+      "http_last_modified": "Wed, 17 Jun 2026 15:35:36 GMT",
+      "path": "data/climate/cru_cy_4.10/raw/Israel.pre.per",
+      "sha256": "5f31f36ad79453b72bba99fa731c671a8ea564d5894ed805f3e44bfc6aecb813",
+      "byte_size": 18171,
+      "header": [
+        "Climatic Research Unit Country File created on Tue 16 Jun 19:20:14 BST 2026, from CRU TS run #2604091129",
+        "Country = Israel               : parameter = Precipitation                  : Units = mm/month            ",
+        "Period = 1901.2025 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "mm/month"
+    },
+    {
+      "version": "4.10",
+      "variable": "tmp",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/countries/tmp/crucy.v4.10.1901.2025.Israel.tmp.per",
+      "fetched_at": "2026-09-05T21:35:30.424416+00:00",
+      "http_last_modified": "Wed, 17 Jun 2026 15:35:12 GMT",
+      "path": "data/climate/cru_cy_4.10/raw/Israel.tmp.per",
+      "sha256": "3c886a578162d4c8af74001a1ffdb9b0880ee0c01ac1377d9082ae4bac988c02",
+      "byte_size": 18171,
+      "header": [
+        "Climatic Research Unit Country File created on Tue 16 Jun 19:20:14 BST 2026, from CRU TS run #2604091129",
+        "Country = Israel               : parameter = Mean Temperature               : Units = degrees Celsius     ",
+        "Period = 1901.2025 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "degrees Celsius"
+    },
+    {
+      "version": "4.10",
+      "variable": "tmx",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/countries/tmx/crucy.v4.10.1901.2025.Israel.tmx.per",
+      "fetched_at": "2026-09-05T21:35:30.525626+00:00",
+      "http_last_modified": "Wed, 17 Jun 2026 15:35:24 GMT",
+      "path": "data/climate/cru_cy_4.10/raw/Israel.tmx.per",
+      "sha256": "93cb9e041c91f68f28c014d7a505f73fa31070faebd261af499bc6c84d8bb4c8",
+      "byte_size": 18171,
+      "header": [
+        "Climatic Research Unit Country File created on Tue 16 Jun 19:20:14 BST 2026, from CRU TS run #2604091129",
+        "Country = Israel               : parameter = Maximum Temperature            : Units = degrees Celsius     ",
+        "Period = 1901.2025 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "degrees Celsius"
+    },
+    {
+      "version": "4.10",
+      "variable": "pet",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/countries/pet/crucy.v4.10.1901.2025.Israel.pet.per",
+      "fetched_at": "2026-09-05T21:35:30.972633+00:00",
+      "http_last_modified": "Wed, 17 Jun 2026 15:36:06 GMT",
+      "path": "data/climate/cru_cy_4.10/raw/Israel.pet.per",
+      "sha256": "c0656cca2fb957d1a4b33503da5ef9174491f12a2b99aab57d9674fa67b9a834",
+      "byte_size": 18171,
+      "header": [
+        "Climatic Research Unit Country File created on Tue 16 Jun 19:20:14 BST 2026, from CRU TS run #2604091129",
+        "Country = Israel               : parameter = Potential Evapotranspiration   : Units = mm/day              ",
+        "Period = 1901.2025 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "mm/day"
+    },
+    {
+      "version": "4.10",
+      "variable": "wet",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/countries/wet/crucy.v4.10.1901.2025.Israel.wet.per",
+      "fetched_at": "2026-09-05T21:35:31.235835+00:00",
+      "http_last_modified": "Wed, 17 Jun 2026 15:35:42 GMT",
+      "path": "data/climate/cru_cy_4.10/raw/Israel.wet.per",
+      "sha256": "6be568857d185b52de5275a0ff24e86e588eb4b85685b887c717751119911cc9",
+      "byte_size": 18171,
+      "header": [
+        "Climatic Research Unit Country File created on Tue 16 Jun 19:20:14 BST 2026, from CRU TS run #2604091129",
+        "Country = Israel               : parameter = Rain Days                      : Units = days                ",
+        "Period = 1901.2025 : missing value = -999.0 : format = (i5,17f8.1)"
+      ],
+      "unit": "days"
+    }
+  ],
+  "documentation": [
+    {
+      "path": "data/climate/cru_cy_4.08/raw/Read_Me_CRU_CY.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/Read_Me_CRU_CY.txt",
+      "sha256": "76ea27da63c7cdd266d45d813ea816539b0f2fc66ed7a27147601df5bba78a21"
+    },
+    {
+      "path": "data/climate/cru_cy_4.08/raw/Read_Me_CRU_CY_Updated_Country_Definitions.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/Read_Me_CRU_CY_Updated_Country_Definitions.txt",
+      "sha256": "364cc8e0c33448ae6d22b35e71368345f675ab647dcd2cc74779617a068eccf1"
+    },
+    {
+      "path": "data/climate/cru_cy_4.08/raw/Release_Notes_CRU_CY_4.08.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/crucy.2407032054.v4.08/Release_Notes_CRU_CY_4.08.txt",
+      "sha256": "daa486d91ef2816cbc791efe5957d0a009b6b5904f2d463f5403b88017a8dc0d"
+    },
+    {
+      "path": "data/climate/cru_cy_4.10/raw/Read_Me_CRU_CY.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY.txt",
+      "sha256": "f60c921b2175287ffd52a9bbaa3a040b2edd48ee351f86569de13fa5c70eab77"
+    },
+    {
+      "path": "data/climate/cru_cy_4.10/raw/Read_Me_CRU_CY_Updated_Country_Definitions.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY_Updated_Country_Definitions.txt",
+      "sha256": "f996d1c1d637a49d977b07387e88e3e9709b0b704da37139fef6cdabbcf99d69"
+    },
+    {
+      "path": "data/climate/cru_cy_4.10/raw/Release_Notes_CRU_CY_4.10.txt",
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Release_Notes_CRU_CY_4.10.txt",
+      "sha256": "c51f963d9d42d86480cc3ee4eb637d9b8ec07acfd1a6f1159c1e7fffeaf4d0ad"
+    }
+  ],
+  "attribution": "Climatic Research Unit, University of East Anglia",
+  "reference": "https://doi.org/10.1038/s41597-020-0453-3",
+  "licensing": {
+    "4.10": "ODbL + DbCL, Attribution and Share-Alike",
+    "4.08": "Open Government Licence; acknowledge CRU and Met Office"
+  },
+  "license_sources": [
+    "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/",
+    "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.08/"
+  ],
+  "release_announced_at": {
+    "4.08": "2024-06-27",
+    "4.10": "2026-06-25"
+  },
+  "geography": {
+    "source_country_label": "Israel",
+    "geography_id": "CRU-CY:Israel",
+    "spatial_resolution_degrees": 0.5,
+    "spatial_denominator": "Source area-weighted mean over CRU country grid-cell allocation; not cultivated area or population",
+    "weighting": "source-supplied area weights; no local equal-cell average or bounding-box substitution",
+    "mask_equivalent_to_cckp_isr": null,
+    "approved_frozen_product_equivalence": false,
+    "mask_equivalent_to_faostat_israel": null,
+    "mask_equivalence_status": "unverified; do not use as a direct CCKP continuation or crop-region exposure",
+    "mask_cell_count": null,
+    "mask_area_km2": null,
+    "mask_coverage_limitation": "Country files do not expose constituent cells, land fractions or denominator area; no invented numerical denominator",
+    "release_boundary_note": "4.10 country-definition notes change Italy/Malta only; older exact Israel mask still not independently reconstructed",
+    "area_weighting_source": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY.txt"
+  },
+  "data_status": "observation-derived monthly gridded estimates; not forecasts; may contain source climatology substitution",
+  "station_coverage": "unavailable in country files; 100% monthly completeness is not 100% station observation coverage",
+  "refresh_policy": "pinned releases; future version requires explicit reviewed addition and overlap comparison"
+}

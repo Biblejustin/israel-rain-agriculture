@@ -122,3 +122,104 @@ bounded. Replacement guards reject malformed, duplicate or shrinking catalogs.
 Existing source snapshots and original review results remain available in
 `results/review_original_54.csv` and pre-extension hashes. Current figures
 replace old captions that asserted irrigation caused decoupling.
+
+## Climate extension through 2025
+
+`monitor_climate.py` now fetches **CRU-CY4.10** directly from the
+[official CRU release](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/).
+Released June 2026, it contains January 1901–December 2025. The live fetch
+validates country, variable, exact units, full declared period, missing codes,
+physical ranges and truncation before replacing source files. `--offline`
+reproduces from hash-checked archived data and documentation. Future CRU
+versions require an explicit reviewed addition; the fetch never guesses a
+new version or silently appends another product.
+
+The monitor adds rainfall, monthly average daily mean/maximum temperature,
+potential evapotranspiration and wet-day frequency. Raw CRU-CY4.08 and 4.10
+remain separate under `data/climate/cru_cy_<version>/`. There are 1,476 and
+1,500 monthly records per variable respectively. Source country averages use
+area weights over the CRU Israel grid mask. The country files expose neither
+constituent grid cells nor a numeric land-area denominator; those remain
+unknown. **No bounding box, equal-cell average, cultivated-area denominator
+or equivalence to CCKP/FAOSTAT territory is invented.**
+
+[CRU methodology](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY.txt)
+states that source gaps can fall back to the 1961–1990 climatology. These are
+observation-derived gridded estimates, not raw station observations. Complete
+monthly files do not prove complete station support. Station counts and the
+fraction falling back to climatology are unavailable in country files.
+[Version 4.10 boundary notes](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Read_Me_CRU_CY_Updated_Country_Definitions.txt)
+change Italy/Malta; no Israel change is listed. That does not certify identical
+geography to World Bank country aggregates or agricultural statistics.
+
+Every shared month is compared between CRU-CY4.08 and 4.10, for all five
+variables. Every shared complete season/year is also compared. A separate
+comparison isolates **CCKP4.08 versus CRU-CY4.08**, which share an upstream
+version but have materially different values: monthly rainfall MAE 12.86mm,
+maximum difference 85.34mm, across all 1,476 common months. High correlation
+(~0.996) does not make these interchangeable. The frozen CCKP rainfall files,
+original analysis plan and prospective wheat coefficients remain unchanged.
+
+New diagnostic baseline = **1991–2020**, requiring 30 complete baseline years
+for each metric. Rain year = October–September; former rain = October–November;
+latter rain = March–April. Temperature means are weighted by actual calendar
+days. PET is supplied in **mm/day** and converted using each month's actual
+length, including leap February. Rain minus PET is a climatic water-balance
+proxy; its standardized departure is **not SPI, SPEI, soil moisture or crop
+water consumption**. March–May mean daily maximum temperature is a fixed
+seasonal heat proxy, not recorded crop phenology or heatwave-day counts.
+Missing months invalidate the affected metric; incomplete edge years retain
+counts and unavailable totals.
+
+As fetched September 2026, the 2025 rain year totals **218.8mm**, or **53.6%**
+of this product's fixed baseline. March–May mean daily maximum temperature is
+**1.29°C above baseline**. These describe the CRU country mask, not farm losses
+or prophetic fulfillment. The human-readable report is
+[`results/climate_monitor.md`](results/climate_monitor.md).
+
+`climate_extension_plan.json` fixes a separate **five-test exploratory** family
+before fitting: wheat yield versus year, CRU-CY4.10 rain and March–May heat;
+then the same model with reported national irrigation share. Fits stop in
+2023. Calendar-distance HAC3 uncertainty preserves actual gaps; BH includes
+all five planned coefficients, with unavailable tests assigned p=1. The rain
+coefficient stays positive after heat adjustment (63 years; q≈0.00030).
+Heat alone is not independently resolved (q≈0.167). The combined irrigation
+model has only 17 reported years: rain/heat intervals include zero. National
+irrigation share has q≈0.020 but remains an aggregate association: neither
+crop-specific irrigation nor causal explanation is identified.
+
+The [CBS 2017 agricultural census, Table 9](https://www.cbs.gov.il/he/publications/DocLib/2024/1906_agriculture_census_2017/t09.pdf)
+contains broad crop-group/district irrigation areas for one year. Its field
+crops are not wheat, and its reported territory includes Israeli localities
+in the source's Judea and Samaria Area. It cannot become an annual wheat
+irrigation control by interpolation. The IMS daily station portal was
+verified; station ingestion and station quality/coverage validation remain
+unavailable here. `data/climate/source_availability.json` records these
+limits. Existing 17-year WDI reported coverage is preserved without invented
+years or crop allocation.
+
+**Prospective validation remains ineligible:** FAOSTAT wheat currently ends
+2024, leaving zero future crop/rain pairs from the frozen 2025 start. At least
+10 future pairs are required; CRU-CY also fails the approved frozen-product
+compatibility gate. Even 10 CRU-CY pairs would not silently authorize replacing
+the frozen CCKP input. No validation score or refit is performed.
+
+```bash
+python monitor_climate.py             # live official source fetch + diagnostics
+python monitor_climate.py --offline   # verify archived hashes + reproduce
+python -m pytest tests -q
+PYTHON=/absolute/path/to/python bash update.sh
+```
+
+Portable monitor artifacts: `data/climate/source_manifest.json`,
+`source_availability.json`, both versioned `monthly.csv` and
+`annual_diagnostics.csv`; `results/climate_monitor.json`,
+`climate_monitor.md`, `climate_overlap_summary.json`,
+`climate_version_overlap_monthly.csv`, `climate_version_overlap_annual.csv`,
+`climate_aggregation_overlap_monthly.csv`, and
+`climate_heat_irrigation_sensitivity.csv`. Every result links back to source
+hashes and frozen plan/model hashes. Raw source files and official notes are
+archived beside each version. CRU4.10 data: ODbL/DbCL, Attribution and
+Share-Alike; CRU4.08 release states Open Government Licence. Attribution:
+Climatic Research Unit, University of East Anglia. Reference:
+[Harris et al. (2020)](https://doi.org/10.1038/s41597-020-0453-3).
