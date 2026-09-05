@@ -27,6 +27,8 @@ import json
 import sys
 import time
 import zipfile
+from datetime import datetime, timezone
+import hashlib
 from pathlib import Path
 
 import pandas as pd
@@ -46,7 +48,8 @@ FAO_INDEX_ZIP = ("https://bulks-faostat.fao.org/production/"
 FAO_CROPS_ZIP = ("https://bulks-faostat.fao.org/production/"
                   "Production_Crops_Livestock_E_All_Data_(Normalized).zip")
 ISRAEL_AREA_CODE = 105
-CROP_PATTERN = "Wheat|Grapes|Olives|Figs|Citrus"
+CROP_NAMES = {"Wheat", "Barley", "Grapes", "Olives", "Figs", "Dates", "Pomegranates", "Citrus Fruit, Total"}
+CROP_PATTERN = "Wheat|Grapes|Olives|Figs|Citrus|Barley|Dates|Pomegranate"
 
 
 def guarded_write(df: pd.DataFrame, target: Path, required_cols: list[str],
@@ -80,6 +83,8 @@ def fetch_cckp() -> None:
             rows.append({"year": year, "month": month,
                           "precip_mm": float(mm)})
         df = pd.DataFrame(rows).sort_values(["year", "month"])
+        if df.duplicated(["year", "month"]).any() or df.precip_mm.isna().any() or df.precip_mm.lt(0).any():
+            raise ValueError("Malformed rainfall month or value; original retained")
         if res == "annual":
             # CCKP stamps annual values mid-year ("YYYY-07"); month is noise
             df = df[["year", "precip_mm"]]
@@ -104,16 +109,21 @@ def _fao_pull(url: str, keep) -> pd.DataFrame:
     r = requests.get(url, headers=UA, timeout=300)
     r.raise_for_status()
     zf = zipfile.ZipFile(io.BytesIO(r.content))
-    csv_name = next(n for n in zf.namelist() if n.endswith(".csv")
-                     and "Flag" not in n and "ItemCode" not in n)
-    df = pd.read_csv(zf.open(csv_name), encoding="latin-1", low_memory=False)
-    df = df[df["Area Code"] == ISRAEL_AREA_CODE]
+    csv_name = next(n for n in zf.namelist() if n.endswith("(Normalized).csv"))
+    pieces = []
+    for chunk in pd.read_csv(zf.open(csv_name), encoding="latin-1", chunksize=200000, low_memory=False):
+        subset = chunk[chunk["Area Code"] == ISRAEL_AREA_CODE]
+        if not subset.empty:
+            pieces.append(subset)
+    if not pieces:
+        raise ValueError("FAOSTAT download has no Israel records")
+    df = pd.concat(pieces, ignore_index=True)
     return keep(df)
 
 
 def fetch_faostat(force: bool = False) -> None:
     target = DATA / "faostat_crops.csv"
-    if target.exists() and not force:
+    if target.exists() and (DATA / "faostat_crop_measures.csv").exists() and not force:
         age_days = (time.time() - target.stat().st_mtime) / 86400
         if age_days < 90:
             print(f"  faostat: local copy {age_days:.0f}d old (<90d), skipping "
@@ -132,17 +142,51 @@ def fetch_faostat(force: bool = False) -> None:
     guarded_write(plain, DATA / "faostat_production_index.csv",
                     ["year", "index_2014_16_100"])
 
-    crops = _fao_pull(FAO_CROPS_ZIP, lambda d: d[
-        (d["Element Code"] == 5510)
-        & d["Item"].str.contains(CROP_PATTERN, na=False)
-    ][["Year", "Item", "Value"]].rename(
-        columns={"Year": "year", "Item": "crop", "Value": "production_tonnes"}))
-    crops = crops.sort_values(["crop", "year"])
-    n_crops = crops["crop"].nunique()
-    if n_crops < 4:
-        sys.exit(f"GUARD REFUSED faostat_crops: only {n_crops} crops matched")
-    guarded_write(crops, DATA / "faostat_crops.csv",
-                    ["year", "crop", "production_tonnes"])
+    raw = _fao_pull(FAO_CROPS_ZIP, lambda d: d[
+        d["Element Code"].isin([5510, 5312, 5412, 5419])
+        & d["Item"].isin(CROP_NAMES)
+    ].copy())
+    measures, crops = normalize_crops(raw, datetime.now(timezone.utc).isoformat())
+    guarded_write(measures, DATA / "faostat_crop_measures.csv",
+                    ["year", "crop", "element_code", "unit", "value", "flag", "source_url"])
+    guarded_write(crops, DATA / "faostat_crops.csv", ["year", "crop", "production_tonnes"])
+    coverage = {"fetched_at": measures.fetched_at.iloc[0], "source_url": FAO_CROPS_ZIP,
+                "source_version": "FAOSTAT QCL live bulk snapshot; sha256 refers to normalized local file",
+                "sha256": hashlib.sha256((DATA / "faostat_crop_measures.csv").read_bytes()).hexdigest(),
+                "observation_start": int(measures.year.min()), "observation_end": int(measures.year.max()),
+                "publication_date": None, "location": "Israel (FAO Area Code 105)",
+                "requested_crops": sorted(CROP_NAMES), "available_crops": sorted(measures.crop.unique()),
+                "missing_requested_crops": sorted(CROP_NAMES-set(measures.crop)),
+                "source_elements": {"5312":"Area harvested, ha", "5412":"Yield, kg/ha", "5510":"Production, t"},
+                "flags": {"A":"Official figure", "E":"Estimated value", "I":"Value imputed by receiving agency", "M":"Missing value; data cannot exist", "X":"Figure from external organization"},
+                "note": "Missing crops/elements are unavailable, never zero; preserve FAOSTAT flags. Dates-as-honey is one traditional interpretation of Deut 8:8."}
+    (DATA / "faostat_crop_metadata.json").write_text(json.dumps(coverage, indent=2)+"\n")
+
+
+def normalize_crops(raw: pd.DataFrame, fetched_at: str):
+    required = {"Year", "Item", "Element", "Element Code", "Unit", "Value", "Flag"}
+    if not required.issubset(raw):
+        raise ValueError(f"FAOSTAT crop schema missing {required-set(raw)}")
+    measures = raw[["Year", "Item", "Element", "Element Code", "Unit", "Value", "Flag"]].rename(
+        columns={"Year":"year", "Item":"crop", "Element":"element", "Element Code":"element_code",
+                 "Unit":"unit", "Value":"value", "Flag":"flag"})
+    measures["value"] = pd.to_numeric(measures.value, errors="raise")
+    if measures.value.dropna().lt(0).any() or measures.duplicated(["year","crop","element_code"]).any():
+        raise ValueError("Negative or duplicate FAOSTAT crop measure")
+    units = {5510: {"t", "tonnes"}, 5312: {"ha"}, 5412: {"kg/ha"}, 5419: {"hg/ha", "100 g/ha", "kg/ha", "t/ha"}}
+    for code, accepted in units.items():
+        found = set(measures.loc[measures.element_code.eq(code), "unit"].dropna())
+        if not found.issubset(accepted):
+            raise ValueError(f"Unknown FAOSTAT unit for element {code}: {found-accepted}")
+    measures["source_url"] = FAO_CROPS_ZIP
+    measures["fetched_at"] = fetched_at
+    measures["publication_date"] = None
+    measures["location"] = "Israel (FAO Area Code 105)"
+    crops = measures[measures.element_code.eq(5510)][["year","crop","value"]].rename(columns={"value":"production_tonnes"})
+    if crops.crop.nunique() < 4 or "Wheat" not in set(crops.crop):
+        raise ValueError("Insufficient FAOSTAT crop coverage")
+    return measures.sort_values(["crop","element_code","year"]), crops.sort_values(["crop","year"])
+
 
 
 def main():
@@ -150,11 +194,15 @@ def main():
     ap.add_argument("--force-faostat", action="store_true",
                      help="re-download FAOSTAT bulk zips regardless of age")
     ap.add_argument("--skip-faostat", action="store_true")
+    ap.add_argument("--refresh-cru", action="store_true", help="Explicitly re-fetch pinned historical baseline")
     args = ap.parse_args()
     DATA.mkdir(exist_ok=True)
 
     print("Fetching CCKP rainfall (CRU TS 4.08, 1901-2023)...")
-    fetch_cckp()
+    if args.refresh_cru or not all((DATA/name).exists() for name in ["rain_cckp_monthly.csv","rain_cckp_annual.csv"]):
+        fetch_cckp()
+    else:
+        print("  Keeping pinned historical CRU TS4.08 baseline through 2023; not a current monitor")
     print("Fetching World Bank cereal yield...")
     fetch_wdi()
     if not args.skip_faostat:

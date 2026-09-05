@@ -7,7 +7,7 @@ Conventions (matching the sibling signs repos):
 - Former rain = October + November of the rain year (the yoreh that opens
   the season); latter rain = March + April (the malqosh that closes it).
   Deut 11:14 and Joel 2:23 language, measured, not assumed.
-- All slopes carry 2,000-draw bootstrap 95% CIs, seeded for reproducibility.
+- All slopes carry HAC(3) t-based 95% CIs, allowing short-range serial dependence.
 - Rain × agriculture coupling is computed on within-era detrended series,
   split at 1990: by then the National Water Carrier (1964) was mature and
   drip irrigation ubiquitous; large-scale desalination (Ashkelon 2005,
@@ -21,6 +21,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy import stats
+import statsmodels.api as sm
 
 HERE = Path(__file__).parent
 DATA = HERE / "data"
@@ -28,19 +29,14 @@ RNG = np.random.default_rng(42)
 
 
 def slope_ci(x: np.ndarray, y: np.ndarray, n_boot: int = 2000):
-    """OLS slope per decade with bootstrap 95% CI."""
-    a, _ = np.polyfit(x, y, 1)
-    slopes = []
-    n = len(x)
-    for _ in range(n_boot):
-        idx = RNG.integers(0, n, size=n)
-        try:
-            ai, _ = np.polyfit(x[idx], y[idx], 1)
-            slopes.append(ai)
-        except Exception:
-            continue
-    lo, hi = np.percentile(slopes, [2.5, 97.5])
-    return a * 10, lo * 10, hi * 10
+    """OLS slope per decade, HAC(3) t-based 95% interval; n_boot retained for API compatibility."""
+    mask = np.isfinite(x) & np.isfinite(y)
+    x,y = np.asarray(x)[mask],np.asarray(y)[mask]
+    order=np.argsort(x)
+    x,y=x[order],y[order]
+    fit=sm.OLS(y,sm.add_constant(x-x.mean())).fit(cov_type="HAC",cov_kwds={"maxlags":3},use_t=True)
+    lo,hi=fit.conf_int()[1]
+    return float(fit.params[1]*10),float(lo*10),float(hi*10)
 
 
 def detrend(series: pd.Series) -> pd.Series:
@@ -52,18 +48,18 @@ def detrend(series: pd.Series) -> pd.Series:
 def load_rain_years() -> pd.DataFrame:
     """Monthly CCKP -> rain-year totals + former/latter season splits."""
     m = pd.read_csv(DATA / "rain_cckp_monthly.csv")
+    if m.duplicated(["year", "month"]).any() or not m["month"].between(1, 12).all():
+        raise ValueError("Duplicate/invalid rainfall months")
     # Rain year label = ending calendar year; Oct-Dec belong to NEXT label
     m["rain_year"] = np.where(m["month"] >= 10, m["year"] + 1, m["year"])
     g = m.groupby("rain_year")
     out = pd.DataFrame({
         "total_mm": g["precip_mm"].sum(),
-        "n_months": g.size(),
+        "n_months": g["precip_mm"].count(),
         "former_mm": m[m["month"].isin([10, 11])].groupby("rain_year")["precip_mm"].sum(),
         "latter_mm": m[m["month"].isin([3, 4])].groupby("rain_year")["precip_mm"].sum(),
     })
     out = out[out["n_months"] == 12].drop(columns="n_months")  # complete years only
-    out["former_mm"] = out["former_mm"].fillna(0.0)
-    out["latter_mm"] = out["latter_mm"].fillna(0.0)
     return out
 
 
@@ -74,7 +70,7 @@ def report_trend(label: str, series: pd.Series):
     pct = s / mean * 100 if mean else 0
     sig = "**" if (lo > 0 or hi < 0) else "  "
     print(f"  {label:<42} {s:+8.2f}/dec [{lo:+8.2f}, {hi:+8.2f}] "
-           f"({pct:+5.1f}%/dec) {sig}")
+           f"({pct:+5.1f}%/dec) {sig}".rstrip())
     return s, lo, hi
 
 
@@ -85,9 +81,12 @@ def era_coupling(rain: pd.Series, ag: pd.Series, lo: int, hi: int, label: str):
     if len(common) < 10:
         return
     rd, ad = detrend(r_e.loc[common]), detrend(a_e.loc[common])
-    r, p = stats.pearsonr(rd, ad)
+    r = stats.pearsonr(rd, ad).statistic
+    x = common.to_numpy(dtype=float)
+    fit=sm.OLS(a_e.loc[common].to_numpy(),np.column_stack([np.ones(len(common)),x-x.mean(),r_e.loc[common].to_numpy()])).fit(cov_type="HAC",cov_kwds={"maxlags":3},use_t=True)
+    p = float(fit.pvalues[2])
     sig = "**" if p < 0.05 else "  "
-    print(f"  {label:<42} r = {r:+.3f}  (p = {p:.3f}, n = {len(common)}) {sig}")
+    print(f"  {label:<42} r = {r:+.3f}  (HAC p = {p:.3f}, n = {len(common)}) {sig}".rstrip())
     return r, p
 
 
@@ -113,7 +112,7 @@ def main():
 
     print()
     print("=" * 100)
-    print("AGRICULTURE (FAOSTAT, 1961-2024)")
+    print("AGRICULTURE (FAOSTAT, observed annual catalog; descriptive)")
     print("=" * 100)
     report_trend("Gross production index (2014-16=100)", idx)
     report_trend("Cereal yield kg/ha (WDI)", yield_.dropna())
@@ -126,14 +125,14 @@ def main():
     print("RAIN x AGRICULTURE COUPLING (within-era detrended Pearson r)")
     print("=" * 100)
     print("Production index vs rain-year total:")
-    era_coupling(rain["total_mm"], idx, 1961, 1990, "  1961-1990 (pre-drip/desal era)")
-    era_coupling(rain["total_mm"], idx, 1991, 2024, "  1991-2024 (drip + desalination era)")
+    era_coupling(rain["total_mm"], idx, 1961, 1990, "  1961-1990 (historical era)")
+    era_coupling(rain["total_mm"], idx, 1991, 2023, "  1991-2023 (historical era)")
     print("Cereal yield vs rain-year total (yield is the rain-sensitive margin):")
     era_coupling(rain["total_mm"], yield_.dropna(), 1961, 1990, "  1961-1990")
     era_coupling(rain["total_mm"], yield_.dropna(), 1991, 2023, "  1991-2023")
 
     print()
-    print("Legend: ** = 95% CI excludes 0 (trends) / p < 0.05 (couplings)")
+    print("Legend: ** = unadjusted HAC 95% CI excludes 0 / HAC p < 0.05. Exploratory; see crop_rain_analysis.py for declared families and formal era interactions.")
 
 
 if __name__ == "__main__":

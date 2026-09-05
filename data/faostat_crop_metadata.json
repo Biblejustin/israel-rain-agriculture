@@ -1,0 +1,45 @@
+{
+  "fetched_at": "2026-09-05T00:37:44.601932+00:00",
+  "source_url": "https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip",
+  "source_version": "FAOSTAT QCL live bulk snapshot; sha256 refers to normalized local file",
+  "sha256": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
+  "observation_start": 1961,
+  "observation_end": 2024,
+  "publication_date": null,
+  "location": "Israel (FAO Area Code 105)",
+  "requested_crops": [
+    "Barley",
+    "Citrus Fruit, Total",
+    "Dates",
+    "Figs",
+    "Grapes",
+    "Olives",
+    "Pomegranates",
+    "Wheat"
+  ],
+  "available_crops": [
+    "Barley",
+    "Citrus Fruit, Total",
+    "Dates",
+    "Figs",
+    "Grapes",
+    "Olives",
+    "Wheat"
+  ],
+  "missing_requested_crops": [
+    "Pomegranates"
+  ],
+  "note": "Missing crops/elements are unavailable, never zero; preserve FAOSTAT flags. Dates-as-honey is one traditional interpretation of Deut 8:8.",
+  "source_elements": {
+    "5312": "Area harvested, ha",
+    "5412": "Yield, kg/ha",
+    "5510": "Production, t"
+  },
+  "flags": {
+    "A": "Official figure",
+    "E": "Estimated value",
+    "I": "Value imputed by receiving agency",
+    "M": "Missing value; data cannot exist",
+    "X": "Figure from external organization"
+  }
+}

@@ -2,32 +2,34 @@
 RAIN (CCKP CRU TS 4.08, rain years Oct-Sep, labeled by ending year)
 ====================================================================================================
   Span: 1902-2023   mean 287 mm   driest 1960 (139 mm)   wettest 1992 (469 mm)
-  Rain-year total, full span                    -4.50/dec [   -7.12,    -1.79] ( -1.6%/dec) **
-  Rain-year total, 1990+                        -3.24/dec [  -31.62,   +18.87] ( -1.2%/dec)   
-  Former rain (Oct-Nov), full span              -0.16/dec [   -1.42,    +1.15] ( -0.4%/dec)   
-  Latter rain (Mar-Apr), full span              -1.22/dec [   -2.20,    -0.23] ( -2.6%/dec) **
-  Former rain, 1990+                            +0.04/dec [  -11.19,   +10.03] ( +0.1%/dec)   
-  Latter rain, 1990+                            -3.57/dec [   -9.96,    +2.69] ( -8.9%/dec)   
+  Rain-year total, full span                    -4.50/dec [   -7.70,    -1.30] ( -1.6%/dec) **
+  Rain-year total, 1990+                        -3.24/dec [  -30.00,   +23.53] ( -1.2%/dec)
+  Former rain (Oct-Nov), full span              -0.16/dec [   -1.21,    +0.88] ( -0.4%/dec)
+  Latter rain (Mar-Apr), full span              -1.22/dec [   -2.23,    -0.21] ( -2.6%/dec) **
+  Former rain, 1990+                            +0.04/dec [   -8.85,    +8.94] ( +0.1%/dec)
+  Latter rain, 1990+                            -3.57/dec [   -8.84,    +1.70] ( -8.9%/dec)
 
 ====================================================================================================
-AGRICULTURE (FAOSTAT, 1961-2024)
+AGRICULTURE (FAOSTAT, observed annual catalog; descriptive)
 ====================================================================================================
-  Gross production index (2014-16=100)         +13.02/dec [  +12.60,   +13.42] (+19.2%/dec) **
-  Cereal yield kg/ha (WDI)                    +346.25/dec [ +233.30,  +458.49] (+13.6%/dec) **
-  Citrus Fruit, Total production (t)         -152581.85/dec [-210875.15, -106011.04] (-16.0%/dec) **
-  Figs production (t)                         +235.18/dec [ +107.40,  +369.66] (+17.3%/dec) **
-  Grapes production (t)                       +625.44/dec [-1716.05, +3413.37] ( +0.8%/dec)   
-  Olives production (t)                      +11481.10/dec [+8472.99, +14512.58] (+29.4%/dec) **
-  Wheat production (t)                       -7666.50/dec [-17115.65, +1256.40] ( -4.7%/dec)   
+  Gross production index (2014-16=100)         +13.02/dec [  +12.34,   +13.70] (+19.2%/dec) **
+  Cereal yield kg/ha (WDI)                    +346.25/dec [ +186.85,  +505.64] (+13.6%/dec) **
+  Barley production (t)                      -5667.24/dec [-9564.44, -1770.04] (-32.7%/dec) **
+  Citrus Fruit, Total production (t)         -152581.85/dec [-243617.02, -61546.68] (-16.0%/dec) **
+  Dates production (t)                       +8926.62/dec [+5985.23, +11868.00] (+51.0%/dec) **
+  Figs production (t)                         +235.18/dec [  +18.69,  +451.66] (+17.3%/dec) **
+  Grapes production (t)                       +625.44/dec [-3999.48, +5250.36] ( +0.8%/dec)
+  Olives production (t)                      +11481.10/dec [+8156.53, +14805.68] (+29.4%/dec) **
+  Wheat production (t)                       -7666.50/dec [-21473.32, +6140.33] ( -4.7%/dec)
 
 ====================================================================================================
 RAIN x AGRICULTURE COUPLING (within-era detrended Pearson r)
 ====================================================================================================
 Production index vs rain-year total:
-    1961-1990 (pre-drip/desal era)           r = +0.053  (p = 0.781, n = 30)   
-    1991-2024 (drip + desalination era)      r = -0.115  (p = 0.524, n = 33)   
+    1961-1990 (historical era)               r = +0.053  (HAC p = 0.661, n = 30)
+    1991-2023 (historical era)               r = -0.115  (HAC p = 0.482, n = 33)
 Cereal yield vs rain-year total (yield is the rain-sensitive margin):
-    1961-1990                                r = +0.566  (p = 0.001, n = 30) **
-    1991-2023                                r = +0.182  (p = 0.309, n = 33)   
+    1961-1990                                r = +0.566  (HAC p = 0.000, n = 30) **
+    1991-2023                                r = +0.182  (HAC p = 0.227, n = 33)
 
-Legend: ** = 95% CI excludes 0 (trends) / p < 0.05 (couplings)
+Legend: ** = unadjusted HAC 95% CI excludes 0 / HAC p < 0.05. Exploratory; see crop_rain_analysis.py for declared families and formal era interactions.

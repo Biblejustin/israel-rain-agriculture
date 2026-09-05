@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-09-05T00:31:08.029414+00:00",
+  "status": "frozen before extended crop, water or irrigation fetch; historical outcomes were already explored",
+  "historical_end": 2023,
+  "already_seen_crop_end": 2024,
+  "holdout_start": 2025,
+  "holdout_status": "reserved; no automatic validation until same-product complete rainfall and at least 10 held-out annual pairs exist",
+  "primary_validation": {"crop":"Wheat", "outcome":"yield_kg_ha", "rain":"total_mm", "direction":"positive", "season":"October previous year through September outcome year", "model":"yield ~ intercept + year + rain; coefficient fitted through 2023, evaluate predictive improvement against year-only baseline on future years; no refit/lag search"},
+  "exploratory_original_family": {"size":54, "outcomes":["Citrus Fruit, Total","Figs","Grapes","Olives","Wheat","cereal yield"], "rain":["total_mm","former_mm","latter_mm"], "eras":[[1961,2023],[1961,1990],[1991,2023]], "multiplicity":"BH separately on partial-time, HAC and block-permutation p values; overlapping samples limit arbitrary-dependence guarantees"},
+  "wheat_followup_family": {"size":30, "outcomes":["production_tonnes","area_harvested_ha","yield_kg_ha"], "rain":["total_mm","former_mm","latter_mm"], "eras":[[1961,2023],[1961,1990],[1991,2023]], "additional_tests":"three total-rain by post-1990 interaction tests, one per outcome", "multiplicity":"BH over all 30 HAC p values including unavailable tests as p=1"},
+  "uncertainty":{"hac_maxlags":3,"block_years":3,"permutations":20000,"seed":20260904},
+  "irrigation":"Use explicitly reported values only; no interpolation, annual carry-forward or claims that year proxy identifies irrigation effect. Report availability before fitting; sparse/estimated coverage requires separate sensitivity design.",
+  "season_definition":"Former rain = October-November; latter rain = March-April. Proxy windows fixed before extensions; national gridded rain is not crop-region rainfall.",
+  "theme":"Deuteronomy 11:14 / Deuteronomy 8:8; interpretive metadata, no measured fulfillment claim"
+}

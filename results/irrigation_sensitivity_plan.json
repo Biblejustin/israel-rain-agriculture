@@ -1,0 +1,18 @@
+{
+  "frozen_before_fit": "2026-09-05T00:41:06.592120+00:00",
+  "status": "exploratory supplementary sensitivity after source availability inspected",
+  "model": "wheat yield ~ intercept + year + fixed rain measure + national irrigated land share",
+  "rain": [
+    "total_mm",
+    "former_mm",
+    "latter_mm"
+  ],
+  "family_size": 6,
+  "coefficients_tested": [
+    "rain",
+    "irrigation"
+  ],
+  "coverage": "reported common years through 2023 only; no interpolation",
+  "covariance": "calendar-distance HAC, maxlag=3",
+  "input_sha256": "2eedc7d5d666b37f505cc1761a6593ee9e276066853b6d71a90b294b7c54bc0e"
+}

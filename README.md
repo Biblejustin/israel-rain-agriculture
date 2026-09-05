@@ -1,148 +1,124 @@
-# israel-rain-agriculture
+# Israel rain, crops and water security
 
-Yearly monitoring of rainfall on the land of Israel and the output of its
-agriculture. One of the sibling repos analyzed together in the
-[`correlations`](https://github.com/Biblejustin/correlations) hub.
+Monitor country rainfall, crop-specific production/area/yield and measured
+Lake Kinneret water levels. Biblical passages such as Deuteronomy 11:14 and
+8:8 provide transparent thematic context. Statistical associations cannot
+establish prophetic fulfillment.
 
-## Why these two, together
+## Current historical finding
 
-Deuteronomy 11:13-17 binds them into one covenant package: rain "in its
-season, the early rain and the later rain," so that the land yields "your
-grain and your wine and your oil." Joel 2:23 speaks of the latter rain in
-restoration language, and Ezekiel 36:8-11 promises a land that shoots forth
-branches and yields fruit "for my people Israel, for they are soon to come
-home." Whether and how the modern data lines up with that frame is exactly
-what a monitor should measure rather than assert. The interpretive frame is
-ours; the numbers below are reported straight, including the ones that cut
-against the expected story.
+September 4, 2026 review extension, **1991–2023**, 33 years, linear trends removed:
 
-## Quick findings
+| Wheat outcome × total rain | Correlation | HAC p | BH q, 30 follow-up tests |
+|---|---:|---:|---:|
+| Production tonnes | +0.617 | 0.000071 | 0.000267 |
+| Harvested area | +0.060 | 0.629 | 0.650 |
+| Yield kg/ha | **+0.558** | **0.000002** | **0.000014** |
 
-- **Rain is declining.** Rain-year totals (Oct-Sep) fall **-4.5 mm/decade
-  [CI -7.1, -1.8] over 1902-2023** against a 287 mm mean; that is roughly
-  55 mm lost in a century.
-- **The loss is concentrated in the latter rain.** The Mar-Apr closing
-  rains (the *malqosh*) decline **-1.2 mm/decade [CI -2.2, -0.2]
-  (-2.6%/decade)**, while the Oct-Nov opening rains (the *yoreh*) are flat.
-  Measured against Joel 2:23 restoration language, the latter rain has been
-  shrinking, not returning; honesty requires saying so.
-- **Agriculture is booming anyway.** FAO's gross production index rises
-  **+19.2%/decade (CI excludes 0)**: the land produces roughly **4.7x its
-  1961 output**. Cereal yield per hectare is up +13.6%/decade.
-- **The storied crops mostly bloom.** Olives **+29%/decade** and figs
-  **+17%/decade** (both significant); grapes flat in tonnage (the quality
-  boom is not a tonnage story); wheat flat-to-down; and citrus, the famous
-  Jaffa orange, has **collapsed -16%/decade** as water costs and
-  urbanization took the orchards.
-- **The harvest has been decoupled from the sky.** Before 1990, detrended
-  cereal yield tracked detrended rainfall at **r = +0.57 (p = 0.001)**: dry
-  year, thin harvest, as in every century before. Since 1991, with drip
-  irrigation everywhere and desalination at scale (Ashkelon 2005, Sorek
-  2013), the correlation drops to **r = +0.18 (not significant)**. The
-  National Water Carrier, the drip emitter, and the desal plant stand
-  between the rain and the bread.
+The production association appears in yield, while harvested area shows little
+association with rain. Yield and production/area agree to source rounding.
+Yield's 3-year block-permutation sensitivity p = **0.00165**. Historical data
+were already explored; these are follow-up associations, not independent
+confirmation. Country-average rain remains an imperfect proxy for wheat-region
+rain and leaves temperature, crop management and irrigation confounding.
 
-The blossoming-land half of the Ezekiel 36 frame is measurably true, and it
-is true *by irrigation engineering during declining rainfall*, which is a
-more interesting fact than either a bare miracle claim or a bare debunk.
-The covenant text itself ties rain to the land's response to its people;
-the modern record shows a people who built around the rain. We report both
-lines and let the reader weigh them.
+A formal rain × post-1990 interaction for wheat yield gives HAC p = **0.408**
+(q = **0.490** in the same 30-test family). Separate significant/nonsignificant
+era correlations do not establish changed association. Prior claims that
+harvests became independent of rain and that these regressions identified
+irrigation as the cause are withdrawn.
 
-## Figures
+An additional **17 observed-year** complete-case sensitivity uses WDI's
+reported national irrigated-land share (2001–2023, with gaps). For total rain,
+the adjusted rain coefficient is 6.23 kg/ha per mm, calendar-HAC p = 0.067,
+q = 0.100 across six supplementary tests. The small, differently covered
+sample and all-crop irrigation denominator limit comparison with the 33-year
+analysis. Source values may include estimates. No causal irrigation effect
+is established. [All sensitivity results](results/irrigation_sensitivity.csv)
+include each of the three fixed rain windows and both tested coefficients.
 
-### Rain years
+[54-test historical screen](results/crop_rain_54.csv) ·
+[Wheat decomposition](results/wheat_decomposition.csv) ·
+[Formal interactions](results/era_interaction.csv) ·
+[Provenance and model manifest](results/crop_rain_manifest.json)
 
-![Rain years](figures/01_rain_years.png)
+## Frozen analysis and future validation
 
-**In plain English:** Each point of the blue line is one rain year (October
-through September, labeled by the year it ends). The red line smooths ten
-years at a time so the eye can follow the drift. The dark line is the
-long-run trend with its uncertainty band: tilted downward, and the tilt is
-statistically real. Israel's rain arrives almost entirely October-May;
-totals bounce hard year to year (139 mm in 1960, 469 mm in 1992), which is
-why the smoothed line matters more than any single spike.
+[analysis_plan.json](analysis_plan.json) was saved before fetching the extended
+crop and water data. Original exploratory family stays **54 tests**: five
+original crop-production series plus cereal yield × three rain measures ×
+three historical periods. Added crops do not silently enlarge that family.
+The wheat follow-up uses **30 tests**: three outcomes × three rain windows ×
+three periods, plus three total-rain by era interactions. HAC p-values share
+a BH family of 30; unavailable tests count as p=1. Block sensitivities retain
+within-block ordering, not all possible long-range dependence.
 
-### Former and latter rain
+All model fitting stops in **2023**. Crop 2024 was already present in the
+review snapshot, so it is not called unseen. Years **2025 onward are reserved**;
+future evaluation requires at least ten complete annual pairs from the same
+rain product. Current source still stops before that holdout. The initial
+rain/year and year-only prediction coefficients are saved once in
+[prospective_wheat_model.json](results/prospective_wheat_model.json), never
+overwritten on refresh. No future-year scores or predictive success claimed.
+Supplementary irrigation plan is frozen separately after source availability
+inspection and before its first fit.
 
-![Former and latter rain](figures/02_former_latter_rain.png)
+Rain year runs October–September, labelled by ending year. Former rain =
+October–November; latter rain = March–April. These are fixed proxy windows.
+Duplicate months fail validation; missing months exclude a whole rain year.
+Missing values never become zero. Trend intervals now use HAC(3), and main
+associations include linear time trends. Formal interactions allow separate
+era intercepts and trends. Gapped irrigation years use calendar-distance HAC,
+so consecutive rows separated by many years do not count as one-year lags.
 
-**In plain English:** The rainy season has two shoulders: the opening rains
-of October-November that soften the ground for plowing, and the closing
-rains of March-April that fill the grain. The top panel (opening rains) is
-flat across 122 years. The bottom panel (closing rains) tilts down, and its
-uncertainty band excludes zero: the season has been losing its finish, not
-its start.
+## Operational observations
 
-### Production
-
-![Production](figures/03_production.png)
-
-**In plain English:** Top: the UN food agency's index of everything Israeli
-agriculture produces, scaled so 2014-2016 average = 100. It climbs from 22
-in 1961 to over 100 today. Bottom: how much grain one hectare yields; the
-same climb. Both slopes are unambiguous.
-
-### The storied crops
-
-![Crops](figures/04_crops.png)
-
-**In plain English:** Five crops with long histories in the land, in
-thousands of tonnes per year. Olives and figs rise strongly; grapes hold
-steady in weight; wheat drifts; citrus falls off a cliff after the 1980s.
-Two asterisks on a title mean the trend is statistically solid.
-
-### The decoupling
-
-![Decoupling](figures/05_decoupling.png)
-
-**In plain English:** Each dot is one year, positioned by how unusual its
-rain was (left-right) and how unusual its grain yield was (up-down), after
-removing each era's own trend. Left panel, 1961-1990: dots slope upward;
-wet years genuinely meant better harvests. Right panel, 1991-2023: the
-slope collapses toward flat; the harvest no longer depends on the sky,
-because the water now arrives by pipe.
-
-## Data
-
-| File | Source | Span |
+| File | Source and coverage | Meaning |
 |---|---|---|
-| `data/rain_cckp_annual.csv` | World Bank CCKP, CRU TS 4.08 country series for ISR (pinned vintage) | 1901-2023 |
-| `data/rain_cckp_monthly.csv` | Same, monthly resolution | 1901-2023 |
-| `data/faostat_production_index.csv` | FAOSTAT bulk (Production Indices), Israel, Gross Production Index 2014-2016=100 | 1961-2024 |
-| `data/faostat_crops.csv` | FAOSTAT bulk (Crops & Livestock), Israel, production tonnes: wheat, grapes, olives, figs, citrus | 1961-2024 |
-| `data/wb_cereal_yield.csv` | World Bank WDI `AG.YLD.CREL.KG` | 1961-2023 |
+| `data/kinneret_levels.csv` | [Israel official CKAN API](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8&limit=2); 11,326 observations, latest 2026-09-03 | Level = −213.325 m relative to source sea-level datum; actual dates and gaps retained |
+| `data/water_security_metadata.json` | Same fetched snapshot | Exact 7/30-day changes, seasonal observed range, gaps, source hash and freshness |
+| `data/water_covariates_reported.csv` | [World Bank WDI irrigated land](https://data.worldbank.org/indicator/AG.LND.IRIG.AG.ZS), agricultural withdrawal share, total withdrawal share | Reported annual water-use values; no local interpolation; national all-crop measures |
+| `data/faostat_crop_measures.csv` | [FAOSTAT QCL bulk](https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip), 1961–2024 | 1,344 rows: 7 crops × area/yield/production × 64 years; units and source flags preserved |
+| `data/faostat_crops.csv` | Same | Backward-compatible production tonnes, now includes barley and dates |
+| `data/faostat_production_index.csv` | FAOSTAT Production Indices, 1961–2024 | Aggregate output index, not crop productivity |
+| `data/wb_cereal_yield.csv` | World Bank WDI AG.YLD.CREL.KG, 1961–2023 | Aggregate cereal yield |
+| `data/rain_cckp_monthly.csv`, `rain_cckp_annual.csv` | Pinned World Bank CCKP / CRU TS4.08, 1901–2023 | **Stale historical baseline**, latest complete rain year 2023; cannot monitor current drought |
 
-Notes and caveats:
+Kinneret levels also respond to transfers, pumping and evaporation. Latest
+measurement date is not certification of uninterrupted coverage. Per-record
+publication/provisional flags are not supplied by the API; these are explicitly
+unknown rather than inferred from fetch time. No lake threshold is labelled
+prophetic. Aquifer levels, crop-region IMS daily rainfall and desalination
+supply are not yet integrated. The [IMS source portal](https://ims.gov.il/en/MetaDataSources)
+was checked but no validated station feed was joined; station observations
+must remain separately versioned from the gridded historical product.
 
-- CRU TS is a gridded reconstruction averaged over the country's area; it is
-  the right tool for trends, not for any single farm's rain gauge. Israel's
-  north-south rainfall gradient (900+ mm in the upper Galilee, <50 mm in
-  Eilat) is averaged inside it.
-- FAOSTAT's JSON API went auth-only in 2025; the bulk zips remain open and
-  are what `fetch_data.py` uses, re-downloading only when the local copy is
-  older than 90 days (they update roughly annually).
-- Israel Meteorological Service daily station data (data.gov.il, homogenized
-  series; Jerusalem back to 1950) is a candidate upgrade for station-level
-  analysis; noted as future work.
+The fixed crop set requests wheat, barley, grapes, figs, pomegranates, olives,
+dates and existing citrus. **Pomegranates unavailable in this bulk source**;
+not represented as zero or guessed from mixed-fruit categories. Dates correspond
+to one traditional interpretation of the “honey” in Deuteronomy 8:8. Source
+metadata lists requested versus available crops and flag definitions. Current
+FAOSTAT crop yield element is **5412 (kg/ha)**; legacy 5419 units are handled
+explicitly and yield must agree with tonnes/area within 5%.
 
-## Reproducing
+## Reproduce
 
 ```bash
-python fetch_data.py          # guarded fetch (CCKP + WDI weekly; FAOSTAT when stale)
-python analyze.py             # trends + coupling table
-python make_plots.py          # regenerates figures/
-# or all three:
-bash update.sh
+python monitor_water.py        # official live water + reported annual covariates
+python fetch_data.py           # crops/WDI; preserves pinned rain unless missing
+python fetch_data.py --force-faostat
+python fetch_data.py --refresh-cru  # explicit same-version historical re-fetch
+python crop_rain_analysis.py    # 54 + 30 historical families
+python irrigation_sensitivity.py
+python analyze.py              # descriptive trends and legacy comparisons
+python make_plots.py
+python -m unittest discover -s tests -v
+bash update.sh                 # operational sequence used by correlations hub
 ```
 
-This repo refreshes automatically each Saturday with the rest of the family
-via the `correlations` repo's `weekly_update.sh`.
-
-## Citations
-
-- Harris, I. et al. (2020). *Version 4 of the CRU TS monthly high-resolution
-  gridded multivariate climate dataset.* Scientific Data 7, 109. (via World
-  Bank Climate Change Knowledge Portal)
-- FAO. *FAOSTAT Production Indices and Crops & Livestock Products.* Rome.
-- World Bank. *World Development Indicators*, AG.YLD.CREL.KG.
+Uses pandas, NumPy, SciPy, statsmodels, requests and matplotlib from the shared
+workspace environment. Bulk CSV processing streams chunks to keep memory
+bounded. Replacement guards reject malformed, duplicate or shrinking catalogs.
+Existing source snapshots and original review results remain available in
+`results/review_original_54.csv` and pre-extension hashes. Current figures
+replace old captions that asserted irrigation caused decoupling.

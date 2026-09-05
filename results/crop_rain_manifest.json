@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-09-05T00:44:14.742445+00:00",
+  "status": "historical exploratory analysis; holdout not evaluated",
+  "analysis_end": 2023,
+  "rain_product": "CRU TS4.08 country mean, complete Oct-Sep years",
+  "holdout_start": 2025,
+  "holdout_min_pairs": 10,
+  "validation_model": {
+    "columns": [
+      "intercept",
+      "year minus 1990",
+      "total_mm"
+    ],
+    "coefficients": [
+      376.2336002893627,
+      13.89564889946726,
+      6.105161307005043
+    ],
+    "year_only_coefficients": [
+      2075.656128392218,
+      10.560824692780338
+    ]
+  },
+  "original_family": 54,
+  "followup_hac_family": 30,
+  "irrigation_model": "Primary historical model excludes irrigation; irrigation_sensitivity.py separately fits source-reported complete-case annual shares, with calendar-distance HAC and no interpolation",
+  "limitations": [
+    "Country rain is not crop-region rain.",
+    "Yield = production / area up to source rounding; three outcomes are dependent.",
+    "Rain by era interaction tests association change, not irrigation causation.",
+    "HAC and 3-year block sensitivity do not remove all serial dependence or confounding."
+  ],
+  "input_sha256": {
+    "analysis_plan.json": "0f9f4ae83239dff5b8ce243be2bc402f70d4d04aac54b28025c5f717de1b3beb",
+    "data/rain_cckp_monthly.csv": "67ca56ed016f4d681012a0410d185d8c5661425243f18a011bc710fc09be585b",
+    "data/faostat_crop_measures.csv": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
+    "data/wb_cereal_yield.csv": "1d348fc2e87feca8dc7cb327d1791491c21e995049b5a0e06c930cad88f726a2"
+  }
+}
