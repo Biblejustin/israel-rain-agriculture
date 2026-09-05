@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "declared_at": "2026-09-05",
+  "status": "exploratory extension; sources and headers inspected before declaration; no statistical fit inspected",
+  "source_versions": ["CRU-CY4.08", "CRU-CY4.10"],
+  "variables": ["pre", "tmp", "tmx", "pet", "wet"],
+  "baseline_years": [1991, 2020],
+  "baseline_required_years": 30,
+  "rain_year": "October previous year through September outcome year; complete 12 months required",
+  "former_rain": "October-November previous year; complete 2 months required",
+  "latter_rain": "March-April outcome year; complete 2 months required",
+  "heat_control": "March-May mean of monthly average daily maximum temperature, weighted by calendar days; proxy season, not observed phenology or heatwave days",
+  "drought_diagnostic": "rain minus potential evapotranspiration, with PET mm/day multiplied by actual days in month; standardized departure from fixed baseline, not SPI, SPEI or measured soil moisture",
+  "monthly_diagnostic": "same-calendar-month departure from the 1991-2020 mean; 30 complete baseline values required",
+  "models": ["wheat yield ~ intercept + year + CRU-CY4.10 rain-year total + CRU-CY4.10 March-May maximum temperature", "same plus source-reported national all-crop irrigated agricultural land share; complete reported years only"],
+  "historical_fit_years": [1961, 2023],
+  "family_size": 5,
+  "tests": "two rain and heat coefficients in full model, plus rain, heat and irrigation coefficients in complete-case irrigation model; unavailable tests assigned p=1 for BH",
+  "covariance": "calendar-distance HAC maxlag3; t reference with n minus parameters degrees of freedom",
+  "minimum_model_n": 12,
+  "interpretation": "exploratory national aggregate sensitivity; observational association, not causal irrigation or prophetic fulfillment; CRU geography is not verified identical to agricultural reporting geography",
+  "holdout": "Original analysis_plan.json and prospective_wheat_model.json remain frozen. CRU-CY is not an approved replacement for World Bank CCKP4.08 aggregation. Never score holdout or refit frozen coefficients in this extension. Original rule requires at least 10 future annual pairs from 2025 onwards and compatible rain product."
+}

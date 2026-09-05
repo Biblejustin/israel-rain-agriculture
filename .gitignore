@@ -4,3 +4,5 @@ data/raw_probe/
 *.zip
 *.csv.bak
 .DS_Store
+
+.climate-refresh-*/

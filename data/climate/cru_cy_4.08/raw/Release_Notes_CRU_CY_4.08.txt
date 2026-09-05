@@ -1,0 +1,34 @@
+RELEASE NOTES FOR CRU CY v4.08: 24 June 2024
+
+NOTE: Please read the main documents as well:
+
+'Read_Me_CRU_CY.txt'
+'Release_Notes_CRU_TS4.08.txt' (in the enclosing directory)
+
+The 4.08 release of the CRU CY dataset covers the period 1901-2023.
+The best published reference to use is that of the underlying dataset,
+CRU TS:
+
+Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS
+monthly high-resolution gridded multivariate climate dataset.
+Sci Data 7, 109 (2020). https://doi.org/10.1038/s41597-020-0453-3
+
+This release uses the updated country definitions introduced in v4.01
+(and v3.25); that parallel release using old definitions is still
+available to allow checking. Please see the separate file,
+'Read_Me_CRU_CY_Updated_Country_Definitions.txt', for details.
+
+
+As always, please contact BADC in the first instance if you have any
+questions, observations or suggestions. If, however, you wish to contact
+CRU directly about these datasets, please contact me at
+i.harris@uea.ac.uk, as mail to other members of the Unit will be passed
+through to me anyway.
+
+Ian Harris
+NCAS-Climate
+Climatic Research Unit
+School of Environmental Sciences
+University of East Anglia
+Norwich
+NR4 7TJ
