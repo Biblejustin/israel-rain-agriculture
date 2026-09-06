@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T11:43:01.354113+00:00",
+  "generated_at": "2026-09-06T13:16:33.293699+00:00",
   "status": "historical exploratory analysis; holdout not evaluated",
   "analysis_end": 2023,
   "rain_product": "CRU TS4.08 country mean, complete Oct-Sep years",
@@ -12,13 +12,13 @@
       "total_mm"
     ],
     "coefficients": [
-      376.2336002893627,
-      13.89564889946726,
-      6.105161307005043
+      376.23360028936077,
+      13.895648899467261,
+      6.105161307005039
     ],
     "year_only_coefficients": [
-      2075.656128392218,
-      10.560824692780338
+      2075.6561283922174,
+      10.560824692780335
     ]
   },
   "original_family": 54,
