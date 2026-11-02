@@ -52,6 +52,29 @@ CROP_NAMES = {"Wheat", "Barley", "Grapes", "Olives", "Figs", "Dates", "Pomegrana
 CROP_PATTERN = "Wheat|Grapes|Olives|Figs|Citrus|Barley|Dates|Pomegranate"
 
 
+def get(url: str, timeout: int, tries: int = 4) -> requests.Response:
+    """GET with retries on timeouts, dropped connections and 5xx answers.
+
+    One World Bank read timeout on 2026-09-10 stopped the whole scheduled
+    refresh, and the dirty checkout it left kept every later run from
+    starting until 2026-11-01. Client errors (4xx) still fail at once.
+    """
+    for attempt in range(1, tries + 1):
+        try:
+            r = requests.get(url, headers=UA, timeout=timeout)
+            if r.status_code < 500:
+                r.raise_for_status()
+                return r
+            problem = f"HTTP {r.status_code}"
+        except (requests.ConnectionError, requests.Timeout) as e:
+            problem = type(e).__name__
+        if attempt == tries:
+            raise RuntimeError(f"{url}: {problem} on all {tries} attempts")
+        wait = 15 * attempt
+        print(f"  {problem} on attempt {attempt}/{tries}; retrying in {wait}s")
+        time.sleep(wait)
+
+
 def guarded_write(df: pd.DataFrame, target: Path, required_cols: list[str],
                     min_rows_ratio: float = 0.95) -> None:
     """Refuse to replace target if df is malformed or shrinks the catalog."""
@@ -74,8 +97,7 @@ def guarded_write(df: pd.DataFrame, target: Path, required_cols: list[str],
 def fetch_cckp() -> None:
     for res, fname in (("annual", "rain_cckp_annual.csv"),
                         ("monthly", "rain_cckp_monthly.csv")):
-        r = requests.get(CCKP_BASE.format(res=res), headers=UA, timeout=60)
-        r.raise_for_status()
+        r = get(CCKP_BASE.format(res=res), timeout=60)
         series = r.json()["data"]["ISR"]
         rows = []
         for key, mm in series.items():
@@ -95,8 +117,7 @@ def fetch_cckp() -> None:
 
 
 def fetch_wdi() -> None:
-    r = requests.get(WDI_URL, headers=UA, timeout=60)
-    r.raise_for_status()
+    r = get(WDI_URL, timeout=60)
     payload = r.json()[1]
     rows = [{"year": int(d["date"]), "cereal_yield_kg_ha": d["value"]}
              for d in payload if d["value"] is not None]
@@ -106,8 +127,7 @@ def fetch_wdi() -> None:
 
 
 def _fao_pull(url: str, keep) -> pd.DataFrame:
-    r = requests.get(url, headers=UA, timeout=300)
-    r.raise_for_status()
+    r = get(url, timeout=300)
     zf = zipfile.ZipFile(io.BytesIO(r.content))
     csv_name = next(n for n in zf.namelist() if n.endswith("(Normalized).csv"))
     pieces = []
