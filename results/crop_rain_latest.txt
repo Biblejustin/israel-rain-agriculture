@@ -7,9 +7,9 @@ production_tonnes 63 total_mm   1961 2023 exploratory era interaction, not irrig
 area_harvested_ha 63 total_mm   1961 2023 exploratory era interaction, not irrigation attribution 0.174357              -54.501648 -133.845332    24.842036        0.249081
       yield_kg_ha 63 total_mm   1961 2023 exploratory era interaction, not irrigation attribution 0.408229                1.363560   -1.913676     4.640797        0.489875
 rain_measure coefficient  n  estimate  p_calendar_hac  q_calendar_hac_family6
-    total_mm        rain 17  6.229749        0.066517                0.099775
-    total_mm  irrigation 17 74.816786        0.028169                0.056338
-   former_mm        rain 17  7.764521        0.474381                0.569257
-   former_mm  irrigation 17 60.188975        0.002624                0.015745
-   latter_mm        rain 17  3.641700        0.737064                0.737064
-   latter_mm  irrigation 17 62.953640        0.019449                0.056338
+    total_mm        rain 17  6.286006        0.067027                0.100540
+    total_mm  irrigation 17 74.794858        0.027914                0.055828
+   former_mm        rain 17  7.894982        0.464929                0.557915
+   former_mm  irrigation 17 60.017179        0.002547                0.015279
+   latter_mm        rain 17  3.796611        0.727240                0.727240
+   latter_mm  irrigation 17 62.505938        0.020077                0.055828

@@ -13,7 +13,7 @@ RAIN (CCKP CRU TS 4.08, rain years Oct-Sep, labeled by ending year)
 AGRICULTURE (FAOSTAT, observed annual catalog; descriptive)
 ====================================================================================================
   Gross production index (2014-16=100)         +13.02/dec [  +12.34,   +13.70] (+19.2%/dec) **
-  Cereal yield kg/ha (WDI)                    +346.25/dec [ +186.85,  +505.64] (+13.6%/dec) **
+  Cereal yield kg/ha (WDI)                    +383.61/dec [ +267.97,  +499.26] (+14.7%/dec) **
   Barley production (t)                      -5667.24/dec [-9564.44, -1770.04] (-32.7%/dec) **
   Citrus Fruit, Total production (t)         -152581.85/dec [-243617.02, -61546.68] (-16.0%/dec) **
   Dates production (t)                       +8926.62/dec [+5985.23, +11868.00] (+51.0%/dec) **
@@ -30,6 +30,6 @@ Production index vs rain-year total:
     1991-2023 (historical era)               r = -0.115  (HAC p = 0.482, n = 33)
 Cereal yield vs rain-year total (yield is the rain-sensitive margin):
     1961-1990                                r = +0.566  (HAC p = 0.000, n = 30) **
-    1991-2023                                r = +0.182  (HAC p = 0.227, n = 33)
+    1991-2023                                r = +0.376  (HAC p = 0.000, n = 33) **
 
 Legend: ** = unadjusted HAC 95% CI excludes 0 / HAC p < 0.05. Exploratory; see crop_rain_analysis.py for declared families and formal era interactions.

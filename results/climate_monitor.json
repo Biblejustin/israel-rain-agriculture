@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T11:34:53.410411+00:00",
+  "generated_at": "2026-11-06T04:42:13.527570+00:00",
   "product": "CRU-CY4.10",
   "latest_complete_rain_year": {
     "year": 2025,
@@ -193,7 +193,8 @@
       2020,
       2021,
       2022,
-      2023
+      2023,
+      2024
     ],
     "scope": "national all-crop agricultural irrigated land share; no wheat-specific irrigation series",
     "source_status": "reported values may contain upstream estimates; no local interpolation"
@@ -215,7 +216,7 @@
   "extension_plan_sha256": "3958d579be4a605362c8038e129473ebef21f6ac760e54fb5447dee0125a3124",
   "inputs_sha256": {
     "data/faostat_crop_measures.csv": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
-    "data/water_covariates_reported.csv": "5d881fb86ff2c81611103906eded9018b9c51e79f4ed9cc82b593056729f2793",
-    "data/climate/source_manifest.json": "d3e914883108f633b5c9c35b4b0d273e1690480a0117bd738f797d7b0bda5881"
+    "data/water_covariates_reported.csv": "4e70a83b206c86feef5ff6393736664e80f937f7831228bd2694cd59a7a7e4d0",
+    "data/climate/source_manifest.json": "005eda7f329e4413f3ed7878df29e2ea1972d1228c60b9d72f95ec2c651e9903"
   }
 }

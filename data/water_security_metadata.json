@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T11:34:19.203196+00:00",
+  "generated_at": "2026-11-06T04:41:41.111562+00:00",
   "kinneret": {
     "source_url": "https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
     "resource_id": "2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
@@ -8,20 +8,20 @@
     "location": "Lake Kinneret, Israel",
     "unit": "m relative to source sea-level datum",
     "publication_date": null,
-    "fetched_at": "2026-09-09T11:34:15.452462+00:00",
-    "observations": 11328,
+    "fetched_at": "2026-11-06T04:41:30.904541+00:00",
+    "observations": 11387,
     "observation_start": "1966-09-01",
-    "observation_end": "2026-09-09",
-    "latest_level_m": -213.4,
-    "change_7d_m": -0.09000000000000341,
-    "change_30d_m": -0.3050000000000068,
-    "rain_season_start": "2025-10-01",
-    "observed_season_refill_range_m": 0.9350000000000023,
-    "unobserved_days_within_span": 10596,
+    "observation_end": "2026-11-05",
+    "latest_level_m": -213.715,
+    "change_7d_m": -0.01500000000001478,
+    "change_30d_m": null,
+    "rain_season_start": "2026-10-01",
+    "observed_season_refill_range_m": 0.125,
+    "unobserved_days_within_span": 10594,
     "max_observation_gap_days": 50,
     "coverage_status": "Observed measurement dates only; gaps retained; latest observation is not certified completeness",
     "denominator": "one level measurement per listed date; no population denominator",
-    "sha256": "92b0e87f8896df573e6c53bcfa5e52cf1b9b5d188351ef8256c32415537c3c25",
+    "sha256": "16dd158e5c07f2cfd99a0e180d2196d0d1c377c9a643990ef5455e5850c4889e",
     "limitations": "Level responds to pumping, transfers, evaporation and inflow. Gauge datum is source-defined. No prophetic threshold."
   },
   "historical_rain": {
@@ -52,10 +52,11 @@
         2020,
         2021,
         2022,
-        2023
+        2023,
+        2024
       ],
       "source_url": "https://api.worldbank.org/v2/country/ISR/indicator/AG.LND.IRIG.AG.ZS?format=json&per_page=200",
-      "source_last_updated": "2026-07-13"
+      "source_last_updated": "2026-10-08"
     },
     "ER.H2O.FWAG.ZS": {
       "label": "Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)",
@@ -114,7 +115,7 @@
         2021
       ],
       "source_url": "https://api.worldbank.org/v2/country/ISR/indicator/ER.H2O.FWAG.ZS?format=json&per_page=200",
-      "source_last_updated": "2026-07-13"
+      "source_last_updated": "2026-10-08"
     },
     "ER.H2O.FWTL.ZS": {
       "label": "Annual freshwater withdrawals, total (% of internal renewable resources)",
@@ -173,7 +174,7 @@
         2021
       ],
       "source_url": "https://api.worldbank.org/v2/country/ISR/indicator/ER.H2O.FWTL.ZS?format=json&per_page=200",
-      "source_last_updated": "2026-07-13"
+      "source_last_updated": "2026-10-08"
     }
   },
   "covariate_model_status": "Reported source values retained without local interpolation. Annual WDI labels can contain estimates/repeated releases. Separate complete-case irrigation_sensitivity.py is exploratory, not causal; national share is not wheat-specific irrigation.",
