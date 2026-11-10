@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T12:46:21.220384+00:00",
+  "generated_at": "2026-11-10T12:48:25.778853+00:00",
   "product": "CRU-CY4.10",
   "latest_complete_rain_year": {
     "year": 2025,
@@ -216,7 +216,7 @@
   "extension_plan_sha256": "3958d579be4a605362c8038e129473ebef21f6ac760e54fb5447dee0125a3124",
   "inputs_sha256": {
     "data/faostat_crop_measures.csv": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
-    "data/water_covariates_reported.csv": "0b52dc8615afa428b5ae89637d2c624dd544ae86dabb8880d18b37851b184e02",
-    "data/climate/source_manifest.json": "c447ad03cbca51d2add7304155bc52e1d06252669a61aafbca696297a17211fd"
+    "data/water_covariates_reported.csv": "926dc447b961d56ba05067045089cfde2df53dc801c9e362453877275fa13037",
+    "data/climate/source_manifest.json": "79f3e52e8f56daf806e921610928b6296e3b05cc921a85d1f13a45e06b98438b"
   }
 }
