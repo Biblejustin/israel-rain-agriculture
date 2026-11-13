@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T12:42:26.827728+00:00",
+  "generated_at": "2026-11-13T12:44:28.861751+00:00",
   "kinneret": {
     "source_url": "https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
     "resource_id": "2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
@@ -8,7 +8,7 @@
     "location": "Lake Kinneret, Israel",
     "unit": "m relative to source sea-level datum",
     "publication_date": null,
-    "fetched_at": "2026-11-12T12:41:22.719193+00:00",
+    "fetched_at": "2026-11-13T12:43:23.815299+00:00",
     "observations": 11391,
     "observation_start": "1966-09-01",
     "observation_end": "2026-11-11",
@@ -21,7 +21,7 @@
     "max_observation_gap_days": 50,
     "coverage_status": "Observed measurement dates only; gaps retained; latest observation is not certified completeness",
     "denominator": "one level measurement per listed date; no population denominator",
-    "sha256": "1f290e2d474f050ea73bc9574dfe51be6a0c989a9c62467febb1729b70ff3f23",
+    "sha256": "fc8394b32d81decafdc446fd553dfeb80bcc8bf658d110c615db589e2659593b",
     "limitations": "Level responds to pumping, transfers, evaporation and inflow. Gauge datum is source-defined. No prophetic threshold."
   },
   "historical_rain": {
@@ -35,7 +35,7 @@
   "irrigation_and_water_use": {
     "refresh_status": "failed; prior annual CSV retained",
     "error": "HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=60)",
-    "last_attempt": "2026-11-12T12:42:26.820405+00:00"
+    "last_attempt": "2026-11-13T12:44:28.854399+00:00"
   },
   "covariate_model_status": "Reported source values retained without local interpolation. Annual WDI labels can contain estimates/repeated releases. Separate complete-case irrigation_sensitivity.py is exploratory, not causal; national share is not wheat-specific irrigation.",
   "theme": "Deuteronomy 11:14; interpretive tag only"
