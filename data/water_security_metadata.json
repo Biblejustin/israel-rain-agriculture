@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-17T12:49:54.989582+00:00",
+  "generated_at": "2026-11-18T12:46:47.343933+00:00",
   "kinneret": {
     "source_url": "https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
     "resource_id": "2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
@@ -8,20 +8,20 @@
     "location": "Lake Kinneret, Israel",
     "unit": "m relative to source sea-level datum",
     "publication_date": null,
-    "fetched_at": "2026-11-17T12:48:47.058273+00:00",
-    "observations": 11392,
+    "fetched_at": "2026-11-18T12:45:38.827800+00:00",
+    "observations": 11393,
     "observation_start": "1966-09-01",
-    "observation_end": "2026-11-12",
+    "observation_end": "2026-11-17",
     "latest_level_m": -213.735,
-    "change_7d_m": -0.020000000000010232,
-    "change_30d_m": -0.0700000000000216,
+    "change_7d_m": -0.01500000000001478,
+    "change_30d_m": -0.040000000000020464,
     "rain_season_start": "2026-10-01",
     "observed_season_refill_range_m": 0.14000000000001478,
-    "unobserved_days_within_span": 10596,
+    "unobserved_days_within_span": 10600,
     "max_observation_gap_days": 50,
     "coverage_status": "Observed measurement dates only; gaps retained; latest observation is not certified completeness",
     "denominator": "one level measurement per listed date; no population denominator",
-    "sha256": "4f68fa2b688b1a474ea56200946409390f3e97dccd61cf8a094c301b536ddcd3",
+    "sha256": "0d104ab3bb50e9d19e98330db2dd3e8cb2298f13465d45b66a97fdc62760d7bc",
     "limitations": "Level responds to pumping, transfers, evaporation and inflow. Gauge datum is source-defined. No prophetic threshold."
   },
   "historical_rain": {
@@ -35,7 +35,7 @@
   "irrigation_and_water_use": {
     "refresh_status": "failed; prior annual CSV retained",
     "error": "HTTPSConnectionPool(host='api.worldbank.org', port=443): Read timed out. (read timeout=60)",
-    "last_attempt": "2026-11-17T12:49:54.980668+00:00"
+    "last_attempt": "2026-11-18T12:46:47.330031+00:00"
   },
   "covariate_model_status": "Reported source values retained without local interpolation. Annual WDI labels can contain estimates/repeated releases. Separate complete-case irrigation_sensitivity.py is exploratory, not causal; national share is not wheat-specific irrigation.",
   "theme": "Deuteronomy 11:14; interpretive tag only"
