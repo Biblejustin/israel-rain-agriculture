@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-24T12:46:21.662843+00:00",
+  "generated_at": "2026-11-25T12:42:11.416316+00:00",
   "kinneret": {
     "source_url": "https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
     "resource_id": "2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
@@ -8,20 +8,20 @@
     "location": "Lake Kinneret, Israel",
     "unit": "m relative to source sea-level datum",
     "publication_date": null,
-    "fetched_at": "2026-11-24T12:46:17.858055+00:00",
-    "observations": 11396,
+    "fetched_at": "2026-11-25T12:42:07.674433+00:00",
+    "observations": 11397,
     "observation_start": "1966-09-01",
-    "observation_end": "2026-11-22",
+    "observation_end": "2026-11-23",
     "latest_level_m": -213.735,
     "change_7d_m": null,
-    "change_30d_m": -0.020000000000010232,
+    "change_30d_m": -0.01500000000001478,
     "rain_season_start": "2026-10-01",
     "observed_season_refill_range_m": 0.14000000000001478,
     "unobserved_days_within_span": 10602,
     "max_observation_gap_days": 50,
     "coverage_status": "Observed measurement dates only; gaps retained; latest observation is not certified completeness",
     "denominator": "one level measurement per listed date; no population denominator",
-    "sha256": "020ffb87d56d3cf0d503990517a2175b0b862f94bb020e2676f83f5d4203678c",
+    "sha256": "7b390d465b9ffeb968c0738d7b5c916b87ce7e4d84258b9811da21d6743d5a70",
     "limitations": "Level responds to pumping, transfers, evaporation and inflow. Gauge datum is source-defined. No prophetic threshold."
   },
   "historical_rain": {
