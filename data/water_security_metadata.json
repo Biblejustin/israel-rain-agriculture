@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T12:43:48.867032+00:00",
+  "generated_at": "2026-11-28T12:41:49.572418+00:00",
   "kinneret": {
     "source_url": "https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
     "resource_id": "2de7b543-e13d-4e7e-b4c8-56071bc4d3c8",
@@ -8,7 +8,7 @@
     "location": "Lake Kinneret, Israel",
     "unit": "m relative to source sea-level datum",
     "publication_date": null,
-    "fetched_at": "2026-11-27T12:43:24.906299+00:00",
+    "fetched_at": "2026-11-28T12:41:45.916830+00:00",
     "observations": 11398,
     "observation_start": "1966-09-01",
     "observation_end": "2026-11-24",
@@ -21,7 +21,7 @@
     "max_observation_gap_days": 50,
     "coverage_status": "Observed measurement dates only; gaps retained; latest observation is not certified completeness",
     "denominator": "one level measurement per listed date; no population denominator",
-    "sha256": "ce31ac5d40a46ea8001a9987497390d8d03fd93a9529c201459ee37d941ab9e3",
+    "sha256": "c08515738351aeb79fc44ab6bf742ed1ed4ce209a2b79c5c7089f59e23962f02",
     "limitations": "Level responds to pumping, transfers, evaporation and inflow. Gauge datum is source-defined. No prophetic threshold."
   },
   "historical_rain": {
